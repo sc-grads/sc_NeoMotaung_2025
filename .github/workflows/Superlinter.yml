@@ -19,4 +19,4 @@ jobs:
           DEFAULT_BRANCH: main  # Default branch to use when checking for changes
           # Additional configurations:
           # Set SQL dialect (optional)
-          SQL_DIALECT: mysql 
+          SQLFLUFF_CONFIG_FILE: tsql
