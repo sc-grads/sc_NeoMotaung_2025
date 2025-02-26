@@ -2,4 +2,4 @@
 --Table: People
 --Show all records in table People:
 
-SELECT * FROM People;
+SELECT * FROM people;
