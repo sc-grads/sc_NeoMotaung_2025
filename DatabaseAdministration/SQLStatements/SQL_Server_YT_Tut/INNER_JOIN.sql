@@ -1,7 +1,7 @@
 --INNER JOIN with product table and brand table using aliases through brand id 
 --Another INNER JOIN with product table and categories table through category_id
 
-SELECT TOP (1000) 
+SELECT TOP (1000)
       *
   FROM [BikeStores].[production].[products] p
   INNER JOIN [BikeStores].[production].[brands] b
