@@ -16,3 +16,8 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SQLFLUFF_DIALECT: tsql
+        with:
+          # Explicitly passing the --dialect argument to SQLFluff
+          LINTER_RULES: "sql"  # Make sure that SQL is being linted
+          # Pass the dialect directly to SQLFluff via command line
+          LINTER_ARGUMENTS: "--dialect tsql"
