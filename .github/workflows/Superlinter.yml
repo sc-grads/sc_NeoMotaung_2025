@@ -13,11 +13,10 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SQLFLUFF_DIALECT: tsql
-        with:
-          # Explicitly passing the --dialect argument to SQLFluff
-          LINTER_RULES: "sql"  # Make sure that SQL is being linted
-          # Pass the dialect directly to SQLFluff via command line
-          LINTER_ARGUMENTS: "--dialect tsql"
+          #DEFAULT_BRANCH: main
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_LOCAL: true        # Use local environment for the linter
+          DEFAULT_BRANCH: main  # Default branch to use when checking for changes
+          # Additional configurations:
+          # Set SQL dialect (optional)
+          SQL_DIALECT: mysql 
