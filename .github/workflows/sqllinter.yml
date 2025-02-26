@@ -3,10 +3,10 @@ name: SQL Linting with SQLFluff
 on: 
   push:
     branches:
-      - main  # Runs the linter on code pushed to the 'main' branch
+      - branch_two  # Runs the linter on code pushed to the 'main' branch
   pull_request:
     branches:
-      - main  # Runs the linter when a PR is created/updated targeting the 'main' branch
+      - branch_two  # Runs the linter when a PR is created/updated targeting the 'main' branch
 
 jobs:
   lint:
@@ -33,5 +33,5 @@ jobs:
           
       - name: Display Linter Results
         run: |
-          sqlfluff lint "src/**/*.sql" --dialect mysql  # Change the dialect if necessary
+          sqlfluff lint "src/**/*.sql" --dialect tsql  # Change the dialect if necessary
 
