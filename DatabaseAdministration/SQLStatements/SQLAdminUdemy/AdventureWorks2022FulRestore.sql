@@ -1,0 +1,6 @@
+USE [master]
+RESTORE DATABASE [AdventureWorks2022] FROM  DISK = N'C:\SQL_BACKUPS\AdventureWorks2022_full.bak' WITH  FILE = 1,  NORECOVERY,  NOUNLOAD,  STATS = 5
+
+GO
+
+

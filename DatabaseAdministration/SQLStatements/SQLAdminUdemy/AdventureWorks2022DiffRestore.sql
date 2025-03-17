@@ -1,0 +1,4 @@
+USE [master]
+RESTORE DATABASE [AdventureWorks2022] FROM  DISK = N'C:\SQL_BACKUPS\AdventureWorks2022_diff_1.diff' WITH  FILE = 1,  NORECOVERY,  NOUNLOAD,  STATS = 5
+
+GO
