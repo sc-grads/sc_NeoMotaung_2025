@@ -1,0 +1,17 @@
+name: Notify Microsoft Teams on Pull Request
+
+on:
+  pull_request:
+    types: [opened, reopened, closed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Microsoft Teams
+        uses: jdcargile/ms-teams-notification@v1.4
+        with:
+          github-token: ${{ github.token }}
+          ms-teams-webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
+          notification-summary: 'Pull Request ${{ github.event.action }}: ${{ github.event.pull_request.title }}'
+          notification-color: '007bff'
