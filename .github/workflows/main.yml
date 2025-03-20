@@ -1,0 +1,5 @@
+- name: Notify Microsoft Teams
+  uses: atlassian/gajira-notify-msteams@v1.0.0
+  with:
+    webhook-url: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+    status: ${{ job.status }}
