@@ -1,0 +1,21 @@
+            - name: teams-webhook
+  # You may pin to the exact commit or the version.
+  # uses: FreEZer00/teams-webhook-action@cc82cece28f01ffcbde5ab2e3eeb007263b4d6e1
+  uses: FreEZer00/teams-webhook-action@v1.4.2
+  with:
+    # url of the webhook to use
+    webhook_url: ${{ secrets.TEAMS_WEBHOOK_URL }}
+    # Card title
+    title: # optional
+    # JSON parsed job context
+    job: # optional
+    # JSON parsed needs context
+    needs: # optional
+    # Display names for optional additional buttons
+    additional_button_title: # optional
+    # URLs for optional additional buttons
+    additional_button_url: # optional
+    # Flag to keep notification short and not display details about needs
+    hide_facts: # optional, default is false
+    # Test action
+    dry_run: # optional, default is false
