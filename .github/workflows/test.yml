@@ -9,8 +9,9 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18
       - name: Install dependencies
-        run: npm ci --force
+        run: npm ci 
+        working-directory: project2
       - name: Run tests 
         run: npm test
