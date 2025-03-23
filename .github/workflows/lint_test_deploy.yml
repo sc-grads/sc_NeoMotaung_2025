@@ -8,13 +8,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Install dependencies
         run: npm ci
-        working-directory: 04_Practise_Project_(Start)
+        working-directory: project4
       - name: Lint project
         run: npm run lint
-        working-directory: 04_Practise_Project_(Start)
+        working-directory: project4
       - name: Test Project
         run: npm run test
-        working-directory: 04_Practise_Project_(Start)
+        working-directory: project4
       - name: Deploy project
         run: npm run build
-        working-directory: 04_Practise_Project_(Start)
+        working-directory: project4
