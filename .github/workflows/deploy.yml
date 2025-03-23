@@ -1,4 +1,4 @@
-name: Test Project
+name: Deploy Project
 on: push
 jobs:
   test: 
@@ -17,6 +17,7 @@ jobs:
         run: npm test
         working-directory: project2
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
