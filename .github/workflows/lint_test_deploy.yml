@@ -1,0 +1,17 @@
+name: Lint Test Deploy
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Lint project
+        run: npm run lint
+        working-directory: 04_Practise_Project_(Start)
+      - name: Test Project
+        run: npm run test
+        working-directory: 04_Practise_Project_(Start)
+      - name: Deploy project
+        run: npm run build
+        working-directory: 04_Practise_Project_(Start)
