@@ -6,6 +6,9 @@ jobs:
     steps:
       - name: Get Code
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+        working-directory: 04_Practise_Project_(Start)
       - name: Lint project
         run: npm run lint
         working-directory: 04_Practise_Project_(Start)
