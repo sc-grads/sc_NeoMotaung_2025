@@ -1,0 +1,58 @@
+name: Demo Project
+on: 
+  pull_request:
+    types:
+      -opened
+    branches:
+      - main
+      - 'dev-*'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
+    paths:
+      - '.github/workflows/*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: dpes-node-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+      - name: test code
+        run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+      - name: uploaud artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: |
+            dist
+            package.json
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Deploy
+        run: echo "Deploying... "
