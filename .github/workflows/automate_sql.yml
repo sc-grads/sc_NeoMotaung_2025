@@ -18,7 +18,8 @@ jobs:
         if: runner.os == 'Windows'
       - name: Create Database
         run: |
-          sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql
+          sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} \ -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
+          cat output.log
         shell: cmd
   create_table:
     runs-on: windows-latest
