@@ -6,13 +6,23 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install SQLCMD
+      - name: Install sqlcmd and dependencies
         run: |
+          # Add Microsoft repository
+          curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
+          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/microsoft.list
+          # Install packages
           sudo apt-get update
           sudo apt-get install -y mssql-tools unixodbc-dev
+          # Add to PATH
+          echo "$PATH:/opt/mssql-tools/bin" >> $GITHUB_PATH
+      - name: Verify sqlcmd installation
+        run: |
+          which sqlcmd
+          sqlcmd -?
       - name: Create Database
         run: |
-          sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} \ -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
+          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} \ -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
           cat output.log
   create_table:
     runs-on: ubuntu-latest
