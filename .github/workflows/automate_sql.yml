@@ -22,7 +22,7 @@ jobs:
           sqlcmd -?
       - name: Create Database
         run: |
-          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} \ -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
+          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
           cat output.log
   create_table:
     needs: create_db
