@@ -2,7 +2,7 @@ name: Automate SQL Database
 on: push
 jobs:
   create_db:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -20,25 +20,6 @@ jobs:
       - name: Create Database
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automation/sql_createdb.sql
-        shell: cmd
-  create_table:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install sqlcmd
-        run: |
-          where sqlcmd || (
-            echo "Installing sqlcmd..."
-            curl -o msodbcsql.msi https://go.microsoft.com/fulink/?linkid=223010
-            msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
-            set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
-          )
-        shell: cmd
-        if: runner.os == 'Windows'
-      - name: Create Table
-        run: |
-          sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automation/sql_createtable.sql
         shell: cmd
   create_table:
     runs-on: self-hosted
