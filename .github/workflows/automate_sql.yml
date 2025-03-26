@@ -13,6 +13,7 @@ jobs:
           # Install packages
           sudo apt-get update
           sudo apt-get install -y mssql-tools unixodbc-dev
+          ls /opt/mssql-tools/bin
           # Add to PATH
           echo "$PATH:/opt/mssql-tools/bin" >> $GITHUB_PATH
       - name: Verify sqlcmd installation
