@@ -8,14 +8,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Install sqlcmd and dependencies
         run: |
-          # Add Microsoft repository
-          curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
-          # Install packages
+          sudoapt-get update
+          sudo apt-get install -y curl gnupg
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add-
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
           sudo apt-get update
           sudo apt-get install -y mssql-tools unixodbc-dev
-          ls /opt/mssql-tools/bin
-          # Add to PATH
-          echo "$PATH:/opt/mssql-tools/bin" >> $GITHUB_PATH
+          echo "/opt/mssql-tools/bin" >> $GITHUB_PATH
+          echo "sqlcmd version: $(sqlcmd -? | grep Version)"
       - name: Verify sqlcmd installation
         run: |
           which sqlcmd
@@ -25,6 +25,7 @@ jobs:
           /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} \ -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
           cat output.log
   create_table:
+    needs: create_db
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -37,6 +38,7 @@ jobs:
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automate/CreateTableUser.sql
   Insert_values:
+    needs: create_table
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
