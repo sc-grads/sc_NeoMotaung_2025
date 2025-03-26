@@ -6,78 +6,49 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Install SQL Server tools
+      - name: Install SQLCMD
         run: |
-          # Import Microsoft repository GPG key
-          curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
-          echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/ubuntu/$(lsb_release -rs)/prod $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/microsoft.list
           sudo apt-get update
           sudo apt-get install -y mssql-tools unixodbc-dev
-          echo "$PATH:/opt/mssql-tools/bin" >> $GITHUB_PATH
-      - name: Verify sqlcmd installation
-        run: |
-          which sqlcmd
-          sqlcmd -?
       - name: Create Database
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} \ -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
           cat output.log
   create_table:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install sqlcmd
+      - name: Install SQLCMD
         run: |
-          where sqlcmd || (
-            echo "Installing sqlcmd..."
-            curl -o msodbcsql.msi https://go.microsoft.com/fulink/?linkid=223010
-            msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
-            set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
-          )
-        shell: cmd
-        if: runner.os == 'Windows'
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
       - name: Create Table
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automate/CreateTableUser.sql
-        shell: cmd
   Insert_values:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install sqlcmd
+      - name: Install SQLCMD
         run: |
-          where sqlcmd || (
-            echo "Installing sqlcmd..."
-            curl -o msodbcsql.msi https://go.microsoft.com/fulink/?linkid=223010
-            msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
-            set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
-          )
-        shell: cmd
-        if: runner.os == 'Windows'
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
       - name: Insert values
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automate/InsertValues.sql
-        shell: cmd
   Display_table:
     runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install sqlcmd
+      - name: Install SQLCMD
         run: |
-          where sqlcmd || (
-            echo "Installing sqlcmd..."
-            curl -o msodbcsql.msi https://go.microsoft.com/fulink/?linkid=223010
-            msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
-            set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
-          )
-        shell: cmd
-        if: runner.os == 'Windows'
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
       - name: Insert values
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automate/display_user.sql
-        shell: cmd
     
     
