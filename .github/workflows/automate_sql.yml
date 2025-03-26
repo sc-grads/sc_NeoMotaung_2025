@@ -2,7 +2,7 @@ name: Automate SQL Database
 on: push
 jobs:
   create_db:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -14,11 +14,14 @@ jobs:
             msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
             set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
           )
+        shell: cmd
+        if: runner.os == 'Windows'
       - name: Create Database
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automation/sql_createdb.sql
+        shell: cmd
   create_table:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -30,11 +33,14 @@ jobs:
             msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
             set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
           )
+        shell: cmd
+        if: runner.os == 'Windows'
       - name: Create Table
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automation/sql_createtable.sql
+        shell: cmd
   Insert_values:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -46,8 +52,11 @@ jobs:
             msiexec /i msodbcsql.msi /quiet /qn /norestart IACCEPTMSODBCSSQLLICENSETERMS=YES
             set "PATH=%PATH%;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
           )
+        shell: cmd
+        if: runner.os == 'Windows'
       - name: Insert values
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -I DatabaseAdministration/SQLStatements/Automation/sql_insertValues.sql
+        shell: cmd
     
     
