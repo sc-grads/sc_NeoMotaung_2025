@@ -1,4 +1,4 @@
-Use neoAutoTest
+Use AutoTest_NM_27Mar
 GO
 
-SELECT * FROM neoUser;
+SELECT * FROM User_NM_27Mar;
