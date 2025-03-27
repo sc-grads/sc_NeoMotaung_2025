@@ -37,7 +37,7 @@ jobs:
           /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/display_user.sql -o output.log -b
           cat output.log
   deployment:
-    needs: create_db
+    needs: dev_environment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
