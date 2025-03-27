@@ -7,11 +7,11 @@ CREATE PROCEDURE InsertUser
 	@Email VARCHAR(50)
 AS
 BEGIN
-	IF @Email IS NOT NULL AND EXISTS (
+    IF @Email IS NOT NULL AND EXISTS (
         SELECT 1 FROM tUser WHERE Email = @Email AND fName = @fName AND Surname = @sName
     )
     BEGIN
-		RAISERROR('Customer with this email already exists.', 16, 1);
+	RAISERROR('Customer with this email already exists.', 16, 1);
         RETURN;
     END
     -- Insert statement
