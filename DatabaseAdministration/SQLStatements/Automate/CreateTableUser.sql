@@ -1,4 +1,4 @@
-USE AutoTest;  -- Specify your database name here
+USE AutoTestDev;  -- Specify your database name here
 GO
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'tUser' AND type = 'U')
