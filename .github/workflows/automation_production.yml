@@ -1,0 +1,70 @@
+name: Automate SQL Production
+on: push
+jobs:
+  dev_environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install sqlcmd and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
+          echo "/opt/mssql-tools/bin" >> $GITHUB_PATH
+          echo "sqlcmd version: $(sqlcmd -? | grep Version)"
+      - name: Verify sqlcmd installation
+        run: |
+          which sqlcmd
+          sqlcmd -?
+      - name: Create Database
+        run: |
+          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/CreateAutoTest.sql -o output.log -b
+          cat output.log
+      - name: Create Table
+        run: |
+          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/CreateTableUser.sql -o output.log -b
+          cat output.log
+      - name: Create Insert Values
+        run: |
+          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/InsertValues.sql -o output.log -b
+          cat output.log
+      - name: Display Table
+        run: |
+          /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/display_user.sql -o output.log -b
+          cat output.log
+  deployment:
+    needs: create_db
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install SQLCMD
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
+          echo "/opt/mssql-tools/bin" >> $GITHUB_PATH
+          echo "sqlcmd version: $(sqlcmd -? | grep Version)"
+      - name: Create Table
+        run: |
+          sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/DBAutoTestMzu.sql -o output.log -b
+          cat output.log
+      - name: Create Table
+        run: |
+          sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/TableUserMzu.sql -o output.log -b
+          cat output.log
+      - name: Create Table
+        run: |
+          sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/InsertValuesMzu.sql -o output.log -b
+          cat output.log
+      - name: Create Table
+        run: |
+          sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/DisplayNeoUser.sql -o output.log -b
+          cat output.log

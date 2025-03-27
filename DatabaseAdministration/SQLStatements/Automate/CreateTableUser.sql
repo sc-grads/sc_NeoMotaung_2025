@@ -8,9 +8,9 @@ BEGIN
         Surname VARCHAR(50) NOT NULL,
         Email VARCHAR(50) NOT NULL
     );
-    PRINT 'Table YourTableName created successfully.';
+    PRINT 'Table User created successfully.';
 END
 ELSE
 BEGIN
-    PRINT 'Table YourTableName already exists.';
+    PRINT 'Table User already exists.';
 END
