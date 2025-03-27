@@ -1,4 +1,4 @@
-Use AutoTestDev_27Mar
+Use AutoTest_NM_27Mar
 GO
 
 SELECT * FROM tUser;
