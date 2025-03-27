@@ -1,4 +1,4 @@
-USE AutoTest_NM_27Mar
+USE AutoTest_NM_27March
 GO
 
 /*CREATE PROCEDURE InsertUser
