@@ -1,4 +1,4 @@
-USE AutoTest
+USE AutoTestDev
 GO
 
 INSERT INTO tUser(fName, Surname, Email)
