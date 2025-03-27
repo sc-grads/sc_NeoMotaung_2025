@@ -1,7 +1,7 @@
 USE AutoTest_NM_27Mar
 GO
 
-CREATE PROCEDURE InsertUser
+/*CREATE PROCEDURE InsertUser
     @fName VARCHAR(50),
     @sName VARCHAR(50),
 	@Email VARCHAR(50)
@@ -26,4 +26,8 @@ EXEC InsertUser @fName = 'Donatello', @sName = 'Doe', @Email = 'd.doe@gmail.com'
 
 EXEC InsertUser @fName = 'Michaelangelo', @sName = 'Johnson', @Email = 'm.Johnson@gmail.com';
 
-EXEC InsertUser @fName = 'Raphael', @sName = 'Johnson', @Email = 'r.johnson@gmail.com';
+EXEC InsertUser @fName = 'Raphael', @sName = 'Johnson', @Email = 'r.johnson@gmail.com';*/
+
+INSERT INTO tUser(fName, Surname, Email) VALUES ('Leonardo', 'Smith', 'l.smith@gmail.com');
+INSERT INTO tUser(fName, Surname, Email) VALUES ('Donnie', 'James', 'd.james@gmail.com');
+INSERT INTO tUser(fName, Surname, Email) VALUES ('Mickey', 'Roy', 'm.roy@gmail.com');
