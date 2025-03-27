@@ -1,7 +1,7 @@
 name: Automate SQL Production
 on: push
 jobs:
-  dev_environment:
+  development:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -36,8 +36,8 @@ jobs:
         run: |
           /opt/mssql-tools/bin/sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/display_user.sql -o output.log -b
           cat output.log
-  deployment:
-    needs: dev_environment
+  production:
+    needs: development
     runs-on: ubuntu-latest
     environment: production
     steps:
