@@ -52,19 +52,19 @@ jobs:
           sudo apt-get install -y mssql-tools unixodbc-dev
           echo "/opt/mssql-tools/bin" >> $GITHUB_PATH
           echo "sqlcmd version: $(sqlcmd -? | grep Version)"
-      - name: Create Table
+      - name: Create Database neoAutoTest
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/DBAutoTestMzu.sql -o output.log -b
           cat output.log
-      - name: Create Table
+      - name: Create Table neoUser
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/TableUserMzu.sql -o output.log -b
           cat output.log
-      - name: Create Table
+      - name: Insert Values into neoUser
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/InsertValuesMzu.sql -o output.log -b
           cat output.log
-      - name: Create Table
+      - name: Display neoUser
         run: |
           sqlcmd -S "${{ secrets.SQL_SERVER_MZU }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD_MZU }} -i DatabaseAdministration/SQLStatements/Automate/DisplayNeoUser.sql -o output.log -b
           cat output.log
