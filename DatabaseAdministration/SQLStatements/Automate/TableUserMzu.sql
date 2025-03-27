@@ -1,16 +1,16 @@
-USE neoAutoTest; 
+USE AutoTest_NM_27Mar; 
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'neoUser' AND type = 'U')
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'User_NM_27Mar' AND type = 'U')
 BEGIN
-    CREATE TABLE neoUser (
+    CREATE TABLE User_NM_27Mar (
         fName VARCHAR(50) NOT NULL,
         Surname VARCHAR(50) NOT NULL,
         Email VARCHAR(50) NOT NULL
     );
-    PRINT 'Table neoUser created successfully.';
+    PRINT 'Table User_NM_27Mar created successfully.';
 END
 ELSE
 BEGIN
-    PRINT 'Table neoUser already exists.';
+    PRINT 'Table User_NM_27Mar already exists.';
 END
