@@ -1,9 +1,9 @@
-IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'AutoTest')
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'AutoTestDev')
 BEGIN
-    CREATE DATABASE AutoTest;
-    PRINT 'Database AutoTest created successfully.';
+    CREATE DATABASE AutoTestDev;
+    PRINT 'Database AutoTestDev created successfully.';
 END
 ELSE
 BEGIN
-    PRINT 'Database AutoTest already exists.';
+    PRINT 'Database AutoTestDev already exists.';
 END
