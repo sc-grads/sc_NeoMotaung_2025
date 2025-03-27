@@ -1,4 +1,4 @@
-USE AutoTest_NM_27Mar; 
+USE AutoTest_NM_27March; 
 GO
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'tUser' AND type = 'U')
