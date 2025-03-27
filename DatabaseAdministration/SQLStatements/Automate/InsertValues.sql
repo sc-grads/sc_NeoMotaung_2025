@@ -1,4 +1,4 @@
-USE AutoTestDev
+USE AutoTestDev_27Mar
 GO
 
 INSERT INTO tUser(fName, Surname, Email)
