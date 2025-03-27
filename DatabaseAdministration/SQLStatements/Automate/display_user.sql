@@ -1,4 +1,4 @@
-Use AutoTest
+Use AutoTestDev
 GO
 
 SELECT * FROM tUser;
