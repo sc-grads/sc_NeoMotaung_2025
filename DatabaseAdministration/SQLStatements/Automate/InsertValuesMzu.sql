@@ -21,7 +21,6 @@ BEGIN
     VALUES (@fName, @sName, @Email);
 END;
 
-DELETE * FROM tUser;
 -- Execute the stored procedure with sample values
 EXEC InsertUser @fName = 'Leonardo', @sName = 'Smith', @Email = 'l.smith@gmail.com';
 
