@@ -1,8 +1,8 @@
 --Create AutoTest_NM_02April
 BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'AutoTest_MN_02April')
-        CREATE DATABASE AutoTest_MN_02April;
-    PRINT 'Database AutoTest_MN_02April created successfully or already exists.';
+    IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'AutoTest_NM_02April')
+        CREATE DATABASE AutoTest_NM_02April;
+    PRINT 'Database AutoTest_NM_02April created successfully or already exists.';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating database: ' + ERROR_MESSAGE();
