@@ -1,0 +1,49 @@
+name: SQL Setup Template
+
+on:
+  workflow_call:
+    inputs:
+      sql_file:
+        description: 'Path to the SQL file relative to the scripts directory'
+        required: true
+        type: string
+      environment_name:
+        description: 'Name of the environment to deploy to'
+        required: false
+        type: string
+    secrets:
+      sql_server:
+        description: 'SQL Server url'
+        required: true
+      sql_password:
+        description: 'SQL Server password'
+        required: true
+
+jobs:
+  run-sql:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment_name }} 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install sqlcmd and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl gnupg
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+          sudo apt-get update
+          sudo apt-get install -y mssql-tools unixodbc-dev
+          echo "/opt/mssql-tools/bin" >> $GITHUB_PATH
+          echo "sqlcmd version: $(sqlcmd -? | grep Version)"
+      - name: Verify sqlcmd installation
+        run: |
+          which sqlcmd
+          sqlcmd -?
+      - name: Run SQL Script with Docker
+        env:
+          SQL_SERVER: ${{ secrets.sql_server }}
+          SQL_PASSWORD: ${{ secrets.sql_password }}
+        run: |
+         /opt/mssql-tools/bin/sqlcmd -S "${{ SQL_SERVER }}" -U Auto_user -P ${{ SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/${{ inputs.sql_file }} -o output.log -b
+         cat output.log
