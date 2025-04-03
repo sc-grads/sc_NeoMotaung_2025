@@ -40,7 +40,7 @@ jobs:
         run: |
           which sqlcmd
           sqlcmd -?
-      - name: Run SQL Script with Docker
+      - name: Run SQL Script
         env:
           SQL_SERVER: ${{ secrets.sql_server }}
           SQL_PASSWORD: ${{ secrets.sql_password }}
