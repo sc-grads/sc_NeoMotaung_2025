@@ -8,13 +8,12 @@ jobs:
     secrets:
      sql_server: ${{ secrets.SQL_SERVER }}
      sql_password: ${{ secrets.SQL_PASSWORD }}
-
   production:
     needs: development
-    environment: production
     uses: ./.github/workflows/sql_server_template.yml
     with:
      sql_file: "database_setup.sql"
+     environment_name: "production"
     secrets:
      sql_server: ${{ secrets.SQL_SERVER_MZU }}
      sql_password: ${{ secrets.SQL_PASSWORD_MZU }}
