@@ -39,11 +39,14 @@ less textfile.txt
 more [file] #Similar to less but only moves forward
 more textfile.txt
 
-head -n [number] [file] #Shows the first n number of lines in a file.
-head -n  textfile.txt
+head (-n [number]) [file] #Shows the first n number of lines in a file, displays 10 lines by default if n is not specified
+head -n 5 textfile.txt
 
-tail -n [number] [file] #Shows the last n number of lines in a file.
+tail (-n [number]) [file] #Shows the last n number of lines in a file.
 tail -n 5 textfile.txt
+
+tail -f [file] #Follows changes to a file in real time
+tail -f textfile.txt
 
 chmod [mode] [file] #Changes file permissions
 chmod 666 textfile.txt
@@ -59,6 +62,19 @@ tree #displays directory in a tree-like structure
 man [command] #opens manual of command, showing it's information and uses. Press Q to quit.
 #eg
 man ls
+
+#Navigating a man page
+
+# Enter Move down one line. 
+# Space Move down one page. 
+# g Move to the top of the page. 
+# G Move to the bottom of the page. 
+# q Quit.
+
+# Searching a man page
+
+man -k [Term]
+man -k system
 
 nano [file] #Opens file and displays its content, editting the file is possible
 #eg
