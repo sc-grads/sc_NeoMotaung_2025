@@ -45,5 +45,5 @@ jobs:
           SQL_SERVER: ${{ secrets.sql_server }}
           SQL_PASSWORD: ${{ secrets.sql_password }}
         run: |
-         /opt/mssql-tools/bin/sqlcmd -S ${{ SQL_SERVER }} -U Auto_user -P ${{ SQL_PASSWORD }} -i DatabaseAdministration/SQLStatements/Automate/${{ inputs.sql_file }} -o output.log -b
+         /opt/mssql-tools/bin/sqlcmd -S ${SQL_SERVER} -U Auto_user -P ${SQL_PASSWORD} -i DatabaseAdministration/SQLStatements/Automate/${{ inputs.sql_file }} -o output.log -b
          cat output.log
