@@ -1,8 +1,8 @@
---Create AutoTest_NM_02April
+--Create AutoTest_NM_04April
 BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'AutoTest_NM_02April')
-        CREATE DATABASE AutoTest_NM_02April;
-    PRINT 'Database AutoTest_NM_02April created successfully or already exists.';
+    IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'AutoTest_NM_04April')
+        CREATE DATABASE AutoTest_NM_04April;
+    PRINT 'Database AutoTest_NM_04April created successfully or already exists.';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating database: ' + ERROR_MESSAGE();
@@ -10,10 +10,10 @@ BEGIN CATCH
 END CATCH;
 GO
 
---Switch context to AutoTest_NM_02April
+--Switch context to AutoTest_NM_04April
 BEGIN TRY
-    USE AutoTest_NM_02April;
-    PRINT 'Switched to AutoTest_NM_02April database.';
+    USE AutoTest_NM_04April;
+    PRINT 'Switched to AutoTest_NM_04April database.';
 END TRY
 BEGIN CATCH
     PRINT 'Error switching to database: ' + ERROR_MESSAGE();
