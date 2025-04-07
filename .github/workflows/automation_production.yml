@@ -1,5 +1,5 @@
 name: Automate SQL Production
-on: push
+on: workflow_dispatch
 jobs:
   development:
     uses: ./.github/workflows/sql_server_template.yml
