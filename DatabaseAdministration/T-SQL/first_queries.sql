@@ -1,0 +1,13 @@
+--SELECT 1+1
+
+--SELECT 1+1 Result
+
+--SELECT 1+1 AS Result
+
+SELECT 1+1 AS Result;
+GO
+SELECT 1*1 AS Result
+GO
+SELECT 1/0 AS Result
+GO
+SELECT 1/2 As Result
