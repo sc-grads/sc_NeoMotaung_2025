@@ -124,4 +124,4 @@ drop table Timesheet
 drop table Project
 drop table Client
 
---SELECT * FROM tblTimesheets
+--SELECT * FROM Timesheet
