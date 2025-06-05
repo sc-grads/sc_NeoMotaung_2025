@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="GetClients"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{A010EF0E-3271-4298-8CB1-AFDB02BA485A}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{0DF8267A-0B6D-47A3-8BB8-9E772D031C2D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Neo Motaung\OneDrive - Northern Data (Pty) Ltd\Documents\Timesheets\Neo\Neo_Motaung_Timesheet_MarFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo\Neo_Motaung_Timesheet_MarFinal.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -307,8 +307,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SAMBE2025020.TimesheetDB 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[SAMBE2025020.TimesheetDB 1]"
+                  connectionManagerID="Package.ConnectionManagers[SAMBE2025020.TimesheetDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAMBE2025020.TimesheetDB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -339,7 +339,7 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClientName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="ClientName" />
                   </externalMetadataColumns>
                 </input>
@@ -415,47 +415,13 @@
           Id="Package\Data Flow Task\Excel Source"
           TopLeft="246.666653189395,59.7999995841583" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="199.16665578468,282.533331368632" />
-        <NodeLayout
           Size="156,41.6"
           Id="Package\Data Flow Task\Data Conversion"
           TopLeft="504.166639120216,187.466665557755" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="316.666653189395,101.399999584158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="265.499985930821,86.0666659735971"
-              Start="0,0"
-              End="265.499985930821,78.5666659735971">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.0333329867986" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.0333329867986"
-                    Point2="0,43.0333329867986"
-                    Point3="4,43.0333329867986" />
-                  <mssgle:LineSegment
-                    End="261.499985930821,43.0333329867986" />
-                  <mssgle:CubicBezierSegment
-                    Point1="261.499985930821,43.0333329867986"
-                    Point2="265.499985930821,43.0333329867986"
-                    Point3="265.499985930821,47.0333329867986" />
-                  <mssgle:LineSegment
-                    End="265.499985930821,78.5666659735971" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="199.16665578468,282.533331368632" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
           TopLeft="582.166639120216,229.066665557755">
@@ -482,6 +448,40 @@
                     Point3="-297.399983335535,30.7333329054382" />
                   <mssgle:LineSegment
                     End="-297.399983335535,45.9666658108765" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="316.666653189395,101.399999584158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="265.499985930821,86.0666659735971"
+              Start="0,0"
+              End="265.499985930821,78.5666659735971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.0333329867986" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.0333329867986"
+                    Point2="0,43.0333329867986"
+                    Point3="4,43.0333329867986" />
+                  <mssgle:LineSegment
+                    End="261.499985930821,43.0333329867986" />
+                  <mssgle:CubicBezierSegment
+                    Point1="261.499985930821,43.0333329867986"
+                    Point2="265.499985930821,43.0333329867986"
+                    Point3="265.499985930821,47.0333329867986" />
+                  <mssgle:LineSegment
+                    End="265.499985930821,78.5666659735971" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

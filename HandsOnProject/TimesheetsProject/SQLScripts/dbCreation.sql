@@ -32,7 +32,7 @@ BEGIN TRY
 			EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
             EntryDate DATE,
 			ClientID int FOREIGN KEY REFERENCES Client(ClientID),
-			ProjectID int FOREIGN KEY REFERENCES Project(ProjectID),
+			Project varchar(50),
 			EntryDesc varchar(50),
 			BillOrNonBill varchar(50),
 			Comments nvarchar(max),
@@ -53,9 +53,8 @@ BEGIN TRY
     IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Employee')
         CREATE TABLE [dbo].[Employee] (
             EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
-			FirstName varchar(15),
-			LastName varchar(20),
-			Email varchar(50) not null unique
+			EmployeeName varchar(15),
+			
         );
     PRINT 'Table [dbo].[Employee] created successfully or already exists.';
 END TRY
@@ -64,6 +63,12 @@ BEGIN CATCH
     THROW;
 END CATCH;
 GO
+
+alter table dbo.Employee
+alter column EmployeeName varchar(50)
+
+alter table Employee
+drop column Email
 
 
 --LEAVE TABLE CREATION
@@ -85,6 +90,21 @@ BEGIN CATCH
     THROW;
 END CATCH;
 GO
+
+create table TestEmployees 
+(
+	TestID INT IDENTITY(1,1) PRIMARY KEY,
+	Employees varchar(50),
+    EntryDate DATE,
+	EntryDesc varchar(50),
+	BillOrNonBill varchar(50),
+	Comments nvarchar(max),
+	TotalHours TIME(0),
+	StartTime TIME(0),
+	EndTime TIME(0)
+)
+
+drop table Project
 
 
 --PROJECT TABLE CREATION
@@ -118,7 +138,10 @@ BEGIN CATCH
 END CATCH;
 GO
 
-drop table Employee
+alter table Client
+alter column ClientName varchar(50)
+
+drop table TestEmployees
 drop table Leave
 drop table Timesheet
 drop table Project
