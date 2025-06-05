@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Allow folders to be tracked
+!*/
+
+# Allow only .sql, .xlsx, .dtsx files in any subfolder
+!**/*.sql
+!**/*.xlsx
+!**/*.dtsx
