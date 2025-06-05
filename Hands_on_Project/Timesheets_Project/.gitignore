@@ -4,9 +4,12 @@
 # Allow folders to be tracked
 !*/
 
+<<<<<<< HEAD
 # Allow only .py and .sql files in any subfolder
 !**/*.sql
 !**/*.xlsx
 !**/*.dtsx
 
 !.gitignore
+
+
