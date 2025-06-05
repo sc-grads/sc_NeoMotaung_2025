@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Allow folders to be tracked
+!*/
+
+# Allow only .py and .sql files in any subfolder
+!**/*.sql
+!**/*.xlsx
+!**/*.dtsx
+
+!.gitignore
