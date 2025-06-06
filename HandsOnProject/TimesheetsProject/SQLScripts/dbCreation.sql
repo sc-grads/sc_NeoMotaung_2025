@@ -53,7 +53,7 @@ BEGIN TRY
     IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Employee')
         CREATE TABLE [dbo].[Employee] (
             EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
-			EmployeeName varchar(15),
+			EmployeeName nvarchar(50),
 			
         );
     PRINT 'Table [dbo].[Employee] created successfully or already exists.';
@@ -91,6 +91,12 @@ BEGIN CATCH
 END CATCH;
 GO
 
+ALTER TABLE Leave
+ADD Approved nvarchar(15), DateOfApplication DATE;
+
+alter table Leave
+drop column DateOfApplication
+
 create table TestEmployees 
 (
 	TestID INT IDENTITY(1,1) PRIMARY KEY,
@@ -104,7 +110,7 @@ create table TestEmployees
 	EndTime TIME(0)
 )
 
-drop table Project
+--drop table Project
 
 
 --PROJECT TABLE CREATION
