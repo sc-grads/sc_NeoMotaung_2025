@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="singleImport"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{6063DB38-EB2A-4754-91A3-9DE500D68674}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{46E2E7E2-B4F4-47B9-9001-7E0CCE850E86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -85,7 +85,19 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo\Neo_Motaung_Timesheet_AprFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo\Neo_Motaung_Timesheet_AprFinal.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 6]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{4F1D1CEF-FDA8-4B60-8CC8-523BEF60C59E}"
+      DTS:ObjectName="Excel Connection Manager 6">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_AprFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -334,7 +346,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">tblTime</property>
+                  name="OpenRowset">Time</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -362,8 +374,8 @@ FROM [Mar$A8:J128]</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 5]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 5]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 6]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 6]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
