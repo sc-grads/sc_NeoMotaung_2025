@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="singleImport"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{114C4CD2-88AD-4C42-BD96-4F31DB85990A}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{6063DB38-EB2A-4754-91A3-9DE500D68674}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -77,6 +77,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 5]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A2E0807B-913A-4418-8770-A9DC4908B564}"
+      DTS:ObjectName="Excel Connection Manager 5">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo\Neo_Motaung_Timesheet_AprFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SAMBE2025020.AdventureWorks2022]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{8E88904A-544E-4717-B7FF-736952553BE7}"
@@ -86,18 +98,6 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=SAMBE2025020;Initial Catalog=AdventureWorks2022;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{8E88904A-544E-4717-B7FF-736952553BE7}SAMBE2025020.AdventureWorks2022;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SAMBE2025020.TheNINES]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{55E011D6-53A1-45F0-8574-B0822EB0204A}"
-      DTS:ObjectName="SAMBE2025020.TheNINES">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=SAMBE2025020;Initial Catalog=TheNINES;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{55E011D6-53A1-45F0-8574-B0822EB0204A}SAMBE2025020.TheNINES;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -362,8 +362,8 @@ FROM [Mar$A8:J128]</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 4]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 4]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 5]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 5]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -744,10 +744,6 @@ FROM [Mar$A8:J128]</property>
                       dataType="i4"
                       name="ClientID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProjectID]"
-                      dataType="i4"
-                      name="ProjectID" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EntryDesc]"
                       codePage="1252"
                       dataType="str"
@@ -765,6 +761,12 @@ FROM [Mar$A8:J128]</property>
                       refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EndTime]"
                       dataType="dbTime2"
                       name="EndTime" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Project]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Project" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
