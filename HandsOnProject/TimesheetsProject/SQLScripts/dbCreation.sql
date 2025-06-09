@@ -31,10 +31,11 @@ BEGIN TRY
             TimesheetID INT IDENTITY(1,1) PRIMARY KEY,
 			EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
             EntryDate DATE,
+			DayOfTheWeek nvarchar(10),
 			ClientID int FOREIGN KEY REFERENCES Client(ClientID),
-			Project varchar(50),
-			EntryDesc varchar(50),
-			BillOrNonBill varchar(50),
+			Project nvarchar(50),
+			DescriptionID int FOREIGN KEY REFERENCES Description(DescriptionID),
+			BillOrNonBill nvarchar(50),
 			Comments nvarchar(max),
 			TotalHours TIME(0),
 			StartTime TIME(0),
@@ -108,7 +109,7 @@ BEGIN TRY
             LeaveID INT IDENTITY(1,1) PRIMARY KEY,
 			WorkbookFileID int FOREIGN KEY REFERENCES WorkbookFile(WorkbookFileID),
 			EmployeeID int FOREIGN KEY REFERENCES Employee(EmployeeID),
-			TypeOfLeave varchar(50),
+			TypeOfLeave nvarchar(50),
 			StartDate DATE,
 			EndDate DATE,
 			NumberOfDays smallint,
@@ -149,7 +150,7 @@ BEGIN TRY
         CREATE TABLE [dbo].[Project] (
             ProjectID INT IDENTITY(1,1) PRIMARY KEY,
 			ClientID int FOREIGN KEY REFERENCES Client(ClientID),
-			ProjectName varchar(20),
+			ProjectName nvarchar(20),
         );
     PRINT 'Table [dbo].[Project] created successfully or already exists.';
 END TRY
@@ -164,7 +165,7 @@ BEGIN TRY
     IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Client')
         CREATE TABLE [dbo].[Client] (
             ClientID INT IDENTITY(1,1) PRIMARY KEY,
-			ClientName varchar(20),
+			ClientName nvarchar(50),
         );
     PRINT 'Table [dbo].[Client] created successfully or already exists.';
 END TRY
@@ -177,10 +178,12 @@ GO
 alter table Client
 alter column ClientName nvarchar(255)
 
-drop table TestEmployees
+drop table Employee
 drop table Leave
 drop table Timesheet
 drop table Project
 drop table Client
+drop table Description
+drop table WorkbookFile
 
 --SELECT * FROM Timesheet

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="GetClients"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{7418EE27-7532-4F6F-861A-14DB5CD605A6}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{3FF2157B-0281-43A9-8F55-7795222F916D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_AprFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_AprFinal.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_FebFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_FebFinal.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -61,7 +61,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_FebFinal.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=NO&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\LoopTest\Neo Motaung\Neo_Motaung_Timesheet_FebFinal.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=NO&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
