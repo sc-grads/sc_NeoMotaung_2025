@@ -64,6 +64,34 @@ BEGIN CATCH
 END CATCH;
 GO
 
+BEGIN TRY
+    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'WorkbookFile')
+        CREATE TABLE [dbo].[WorkbookFile] (
+            WorkbookFileID INT IDENTITY(1,1) PRIMARY KEY,
+			NameOfFile nvarchar(255),
+        );
+    PRINT 'Table [dbo].[WorkbookFile] created successfully or already exists.';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
+BEGIN TRY
+    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Description')
+        CREATE TABLE [dbo].[Description] (
+            DescriptionID INT IDENTITY(1,1) PRIMARY KEY,
+			DescText nvarchar(50),
+        );
+    PRINT 'Table [dbo].[Description] created successfully or already exists.';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
 alter table dbo.Employee
 alter column EmployeeName varchar(50)
 
@@ -72,11 +100,13 @@ drop column Email
 
 
 --LEAVE TABLE CREATION
+
+drop table Leave
 BEGIN TRY
     IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Leave')
         CREATE TABLE [dbo].[Leave] (
             LeaveID INT IDENTITY(1,1) PRIMARY KEY,
-			TimesheetID int FOREIGN KEY REFERENCES Timesheet(TimesheetID),
+			WorkbookFileID int FOREIGN KEY REFERENCES WorkbookFile(WorkbookFileID),
 			EmployeeID int FOREIGN KEY REFERENCES Employee(EmployeeID),
 			TypeOfLeave varchar(50),
 			StartDate DATE,
@@ -145,7 +175,7 @@ END CATCH;
 GO
 
 alter table Client
-alter column ClientName varchar(50)
+alter column ClientName nvarchar(255)
 
 drop table TestEmployees
 drop table Leave
