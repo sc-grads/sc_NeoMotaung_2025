@@ -1,10 +1,9 @@
-drop database TheNINES
 
 --CREATE TIMESHEETDB
 BEGIN TRY
     IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'TimesheetDB')
         CREATE DATABASE TimesheetDB;
-    PRINT 'Database TimesheetDB created successfully or already exists.';
+    PRINT 'Database TimesheetDB created successfully';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating database: ' + ERROR_MESSAGE();
@@ -23,41 +22,23 @@ BEGIN CATCH
 END CATCH;
 GO
 
-
---TIMESHEET TABLE CREATION
-BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Timesheet')
-        CREATE TABLE [dbo].[Timesheet] (
-            TimesheetID INT IDENTITY(1,1) PRIMARY KEY,
-			EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
-            EntryDate DATE,
-			DayOfTheWeek nvarchar(10),
-			ClientID int FOREIGN KEY REFERENCES Client(ClientID),
-			Project nvarchar(50),
-			DescriptionID int FOREIGN KEY REFERENCES Description(DescriptionID),
-			BillOrNonBill nvarchar(50),
-			Comments nvarchar(max),
-			TotalHours TIME(0),
-			StartTime TIME(0),
-			EndTime TIME(0)
-        );
-    PRINT 'Table [dbo].[Timesheets] created successfully or already exists.';
-END TRY
-BEGIN CATCH
-    PRINT 'Error creating table: ' + ERROR_MESSAGE();
-    THROW;
-END CATCH;
-GO
+DROP TABLE Timesheet
+DROP TABLE Leave
+DROP TABLE Employee
+DROP TABLE Description
+DROP TABLE Client
+DROP TABLE WorkbookFile
+DROP TABLE ErrorLog
+DROP TABLE AuditLog
 
 --TABLE EMPLOYEE CREATION
+
 BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Employee')
-        CREATE TABLE [dbo].[Employee] (
-            EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
-			EmployeeName nvarchar(50),
-			
-        );
-    PRINT 'Table [dbo].[Employee] created successfully or already exists.';
+    CREATE TABLE [dbo].[Employee] (
+        EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
+		EmployeeName nvarchar(50),
+    );
+    PRINT 'Table [dbo].[Employee] created successfully';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating table: ' + ERROR_MESSAGE();
@@ -65,12 +46,13 @@ BEGIN CATCH
 END CATCH;
 GO
 
+-- TABLE WORKBOOKFILE 
+
 BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'WorkbookFile')
-        CREATE TABLE [dbo].[WorkbookFile] (
-            WorkbookFileID INT IDENTITY(1,1) PRIMARY KEY,
-			NameOfFile nvarchar(255),
-        );
+    CREATE TABLE [dbo].[WorkbookFile] (
+        WorkbookFileID INT IDENTITY(1,1) PRIMARY KEY,
+		NameOfFile nvarchar(255),
+    );
     PRINT 'Table [dbo].[WorkbookFile] created successfully or already exists.';
 END TRY
 BEGIN CATCH
@@ -79,80 +61,14 @@ BEGIN CATCH
 END CATCH;
 GO
 
+--TABLE DESCRIPTION
+
 BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Description')
-        CREATE TABLE [dbo].[Description] (
-            DescriptionID INT IDENTITY(1,1) PRIMARY KEY,
-			DescText nvarchar(50),
-        );
-    PRINT 'Table [dbo].[Description] created successfully or already exists.';
-END TRY
-BEGIN CATCH
-    PRINT 'Error creating table: ' + ERROR_MESSAGE();
-    THROW;
-END CATCH;
-GO
-
-alter table dbo.Employee
-alter column EmployeeName varchar(50)
-
-alter table Employee
-drop column Email
-
-
---LEAVE TABLE CREATION
-
-drop table Leave
-BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Leave')
-        CREATE TABLE [dbo].[Leave] (
-            LeaveID INT IDENTITY(1,1) PRIMARY KEY,
-			WorkbookFileID int FOREIGN KEY REFERENCES WorkbookFile(WorkbookFileID),
-			EmployeeID int FOREIGN KEY REFERENCES Employee(EmployeeID),
-			TypeOfLeave nvarchar(50),
-			StartDate DATE,
-			EndDate DATE,
-			NumberOfDays smallint,
-        );
-    PRINT 'Table [dbo].[Leave] created successfully or already exists.';
-END TRY
-BEGIN CATCH
-    PRINT 'Error creating table: ' + ERROR_MESSAGE();
-    THROW;
-END CATCH;
-GO
-
-ALTER TABLE Leave
-ADD Approved nvarchar(15), DateOfApplication DATE;
-
-alter table Leave
-drop column DateOfApplication
-
-create table TestEmployees 
-(
-	TestID INT IDENTITY(1,1) PRIMARY KEY,
-	Employees varchar(50),
-    EntryDate DATE,
-	EntryDesc varchar(50),
-	BillOrNonBill varchar(50),
-	Comments nvarchar(max),
-	TotalHours TIME(0),
-	StartTime TIME(0),
-	EndTime TIME(0)
-)
-
---drop table Project
-
-
---PROJECT TABLE CREATION
-BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Project')
-        CREATE TABLE [dbo].[Project] (
-            ProjectID INT IDENTITY(1,1) PRIMARY KEY,
-			ClientID int FOREIGN KEY REFERENCES Client(ClientID),
-			ProjectName nvarchar(20),
-        );
-    PRINT 'Table [dbo].[Project] created successfully or already exists.';
+    CREATE TABLE [dbo].[Description] (
+        DescriptionID INT IDENTITY(1,1) PRIMARY KEY,
+		DescText nvarchar(50),
+    );
+    PRINT 'Table [dbo].[Description] created successfully';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating table: ' + ERROR_MESSAGE();
@@ -161,13 +77,13 @@ END CATCH;
 GO
 
 --CLIENT TABLE CREATION
+
 BEGIN TRY
-    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Client')
-        CREATE TABLE [dbo].[Client] (
-            ClientID INT IDENTITY(1,1) PRIMARY KEY,
-			ClientName nvarchar(50),
-        );
-    PRINT 'Table [dbo].[Client] created successfully or already exists.';
+	CREATE TABLE [dbo].[Client] (
+        ClientID INT IDENTITY(1,1) PRIMARY KEY,
+		ClientName nvarchar(50),
+    );
+    PRINT 'Table [dbo].[Client] created successfully';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating table: ' + ERROR_MESSAGE();
@@ -175,15 +91,92 @@ BEGIN CATCH
 END CATCH;
 GO
 
-alter table Client
-alter column ClientName nvarchar(255)
+--LEAVE TABLE CREATION
 
-drop table Employee
-drop table Leave
-drop table Timesheet
-drop table Project
-drop table Client
-drop table Description
-drop table WorkbookFile
+BEGIN TRY
+    CREATE TABLE [dbo].[Leave] (
+        LeaveID INT IDENTITY(1,1) PRIMARY KEY,
+		WorkbookFileID int FOREIGN KEY REFERENCES WorkbookFile(WorkbookFileID),
+		EmployeeID int FOREIGN KEY REFERENCES Employee(EmployeeID),
+		TypeOfLeave nvarchar(50),
+		StartDate DATE,
+		EndDate DATE,
+		NumberOfDays smallint,
+    );
+    PRINT 'Table [dbo].[Leave] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
 
---SELECT * FROM Timesheet
+--TIMESHEET TABLE CREATION
+
+BEGIN TRY
+    CREATE TABLE Timesheet (
+        TimesheetID INT IDENTITY(1,1) PRIMARY KEY,
+		EmployeeID INT FOREIGN KEY REFERENCES Employee(EmployeeID),
+        EntryDate DATE,
+		DayOfTheWeek nvarchar(10),
+		ClientID int FOREIGN KEY REFERENCES Client(ClientID),
+		Project nvarchar(50),
+		DescriptionID int FOREIGN KEY REFERENCES Description(DescriptionID),
+		BillOrNonBill nvarchar(50),
+		Comments nvarchar(max),
+		TotalHours TIME(0),
+		StartTime TIME(0),
+		EndTime TIME(0)
+    );
+    PRINT 'Table [dbo].[Timesheet] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
+
+
+
+
+--TABLE AUDIT LOGS
+
+BEGIN TRY
+    CREATE TABLE [dbo].[AuditLog] (
+        AuditID INT IDENTITY(1,1) PRIMARY KEY,
+		PackageName nvarchar(100),
+		TaskName nvarchar(100),
+		SheetFileName nvarchar(100),
+		AuditTime DATETIME2,
+		ExecutionStatus nvarchar(50),
+		RowsProcessed int,
+		RowsFailed int,
+		Destination nvarchar(100),
+    );
+    PRINT 'Table [dbo].[AuditLog] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
+--TABLE ERRORS
+
+BEGIN TRY
+    CREATE TABLE [dbo].[ErrorLog] (
+        ErrorID INT IDENTITY(1,1) PRIMARY KEY,
+		SheetFileName nvarchar(255),
+		--AuditID int FOREIGN KEY REFERENCES AuditLogs(AuditID),
+		ErrorCode int,
+		ErrorMsg nvarchar(1000),
+		ErrorTime DATETIME DEFAULT GETDATE()
+    );
+    PRINT 'Table [dbo].[ErrorLog] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
