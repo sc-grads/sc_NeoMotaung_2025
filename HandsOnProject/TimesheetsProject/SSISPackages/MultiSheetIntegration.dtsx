@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="MultiSheetIntegration"
   DTS:PackageType="5"
-  DTS:VersionBuild="196"
-  DTS:VersionGUID="{10684BC6-1131-457D-BBC9-9266403BD1CC}">
+  DTS:VersionBuild="198"
+  DTS:VersionGUID="{304B3D02-E132-46F9-BC78-CF9017A263F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -343,14 +343,35 @@
               ReadOnlyVariables="User::FolderPath,User::SheetFile"
               ReadWriteVariables="User::SubFolderName,User::WorkbookName">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_f8cd01ce6afd4248aa9dc1a13fdd57dc")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyProduct("ST_f8cd01ce6afd4248aa9dc1a13fdd57dc")]
+[assembly: AssemblyCopyright("Copyright @ HP 2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -735,35 +756,14 @@ namespace ST_f8cd01ce6afd4248aa9dc1a13fdd57dc.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_f8cd01ce6afd4248aa9dc1a13fdd57dc")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("ST_f8cd01ce6afd4248aa9dc1a13fdd57dc")]
-[assembly: AssemblyCopyright("Copyright @ HP 2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -972,14 +972,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               ReadOnlyVariables="User::SheetFile"
               ReadWriteVariables="User::WorkbookName">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d8e22ab2101e468d9da0ac01b5f86253")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HP")]
+[assembly: AssemblyProduct("ST_d8e22ab2101e468d9da0ac01b5f86253")]
+[assembly: AssemblyCopyright("Copyright @ HP 2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1099,35 +1120,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d8e22ab2101e468d9da0ac01b5f86253.Properties.Settings.get_Default():ST_d8e22ab2101e468d9da0ac01b5f86253.Properties.Sett" +
-    "ings")]
-
-namespace ST_d8e22ab2101e468d9da0ac01b5f86253.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1269,6 +1261,35 @@ namespace ST_d8e22ab2101e468d9da0ac01b5f86253
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d8e22ab2101e468d9da0ac01b5f86253.Properties.Settings.get_Default():ST_d8e22ab2101e468d9da0ac01b5f86253.Properties.Sett" +
+    "ings")]
+
+namespace ST_d8e22ab2101e468d9da0ac01b5f86253.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
                 Name="ST_d8e22ab2101e468d9da0ac01b5f86253.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -1355,35 +1376,14 @@ namespace ST_d8e22ab2101e468d9da0ac01b5f86253
   </ProjectExtensions>
 </Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d8e22ab2101e468d9da0ac01b5f86253")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("ST_d8e22ab2101e468d9da0ac01b5f86253")]
-[assembly: AssemblyCopyright("Copyright @ HP 2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -4883,15 +4883,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   name="Excel Source Output"
                   startId="Package\Foreach Loop Container\Leave Table\Excel Source 1.Outputs[Excel Source Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Leave Table.Paths[Lookup Error Output]"
-                  endId="Package\Foreach Loop Container\Leave Table\Union All.Inputs[Union All Input 5]"
-                  name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Leave Table\Lookup 3.Outputs[Lookup Error Output]" />
-                <path
                   refId="Package\Foreach Loop Container\Leave Table.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Leave Table\Union All.Inputs[Union All Input 6]"
                   name="Lookup Error Output"
                   startId="Package\Foreach Loop Container\Leave Table\Lookup.Outputs[Lookup Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Leave Table.Paths[Lookup Error Output]"
+                  endId="Package\Foreach Loop Container\Leave Table\Union All.Inputs[Union All Input 5]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Leave Table\Lookup 3.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Leave Table.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Leave Table\Lookup.Inputs[Lookup Input]"
@@ -8804,9 +8804,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Foreach Loop Container\Timesheet Table\Excel Source.Outputs[Excel Source Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output2]"
-                  endId="Package\Foreach Loop Container\Timesheet Table\Union All.Inputs[Union All Input 6]"
+                  endId="Package\Foreach Loop Container\Timesheet Table\Union All.Inputs[Union All Input 4]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Timesheet Table\Lookup 2.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\Timesheet Table\Lookup.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output1]"
                   endId="Package\Foreach Loop Container\Timesheet Table\Union All.Inputs[Union All Input 5]"
@@ -8814,16 +8814,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   startId="Package\Foreach Loop Container\Timesheet Table\Lookup 1.Outputs[Lookup Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output]"
-                  endId="Package\Foreach Loop Container\Timesheet Table\Union All.Inputs[Union All Input 4]"
+                  endId="Package\Foreach Loop Container\Timesheet Table\Union All.Inputs[Union All Input 6]"
                   name="Lookup Error Output"
-                  startId="Package\Foreach Loop Container\Timesheet Table\Lookup.Outputs[Lookup Error Output]" />
+                  startId="Package\Foreach Loop Container\Timesheet Table\Lookup 2.Outputs[Lookup Error Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output1]"
+                  refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output]"
                   endId="Package\Foreach Loop Container\Timesheet Table\Lookup 2.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Foreach Loop Container\Timesheet Table\Lookup 1.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output]"
+                  refId="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output1]"
                   endId="Package\Foreach Loop Container\Timesheet Table\Lookup 1.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Foreach Loop Container\Timesheet Table\Lookup.Outputs[Lookup Match Output]" />
@@ -8955,22 +8955,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Foreach Loop Container\Execute SQL Task"
           TopLeft="45.9497344690053,313.4645487684" />
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Foreach Loop Container\Get Subfolder Name"
-          TopLeft="41.8481561717792,13.1666667691205" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Foreach Loop Container\Get Workbook Name"
-          TopLeft="260.341257146703,13.2105817852032" />
-        <NodeLayout
-          Size="135.2,44.8"
-          Id="Package\Foreach Loop Container\Leave Table"
-          TopLeft="170.642185788067,447.616662958745" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table"
-          TopLeft="160.106472077998,147.46957461485" />
-        <NodeLayout
           Size="173.6,41.6"
           Id="Package\Foreach Loop Container\Execute SQL Task 1"
           TopLeft="130.6454970372,78.8910044568346" />
@@ -8986,6 +8970,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="173.6,41.6"
           Id="Package\Foreach Loop Container\Execute SQL Task 4"
           TopLeft="148.105813543528,525.123807311153" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Foreach Loop Container\Get Subfolder Name"
+          TopLeft="41.8481561717792,13.1666667691205" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Foreach Loop Container\Get Workbook Name"
+          TopLeft="260.341257146703,13.2105817852032" />
+        <NodeLayout
+          Size="135.2,44.8"
+          Id="Package\Foreach Loop Container\Leave Table"
+          TopLeft="170.642185788067,447.616662958745" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table"
+          TopLeft="160.106472077998,147.46957461485" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
           TopLeft="228.953432916371,414.575660221024">
@@ -9155,34 +9155,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
-          TopLeft="210.749734469005,334.2645487684">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.2036984473652,38.7111114526234"
-              Start="0,0"
-              End="18.2036984473652,31.2111114526234">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="14.2036984473652,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.2036984473652,0"
-                    Point2="18.2036984473652,0"
-                    Point3="18.2036984473652,4" />
-                  <mssgle:LineSegment
-                    End="18.2036984473652,31.2111114526234" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
           TopLeft="239.138617545062,263.972484940564">
           <EdgeLayout.Curve>
@@ -9216,6 +9188,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 7]"
+          TopLeft="210.749734469005,334.2645487684">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.2036984473652,38.7111114526234"
+              Start="0,0"
+              End="18.2036984473652,31.2111114526234">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="14.2036984473652,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.2036984473652,0"
+                    Point2="18.2036984473652,0"
+                    Point3="18.2036984473652,4" />
+                  <mssgle:LineSegment
+                    End="18.2036984473652,31.2111114526234" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -9232,135 +9232,95 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Data Conversion 1"
-          TopLeft="373.333323233657,181.716666479094" />
+          Size="120.8,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Lookup 3"
+          TopLeft="27.499994954301,337.666665949756" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Derived Column 1"
-          TopLeft="228.124992668421,256.249999464138" />
+          Size="152.8,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Derived Column"
+          TopLeft="850.666653990745,705.99998947978" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Union All"
+          TopLeft="1089.333317101,529.999992102385" />
         <NodeLayout
           Size="148,41.6"
           Id="Package\Foreach Loop Container\Leave Table\Excel Source 1"
           TopLeft="88.4999977540635,9.66666741669177" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Lookup 3"
-          TopLeft="27.499994954301,337.666665949756" />
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\OLE DB Destination"
+          TopLeft="100.476189873048,593.183329380139" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Foreach Loop Container\Leave Table\Lookup"
           TopLeft="162.222219804923,412.111108453737" />
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\OLE DB Destination"
-          TopLeft="100.476189873048,593.183329380139" />
+          Size="180,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\OLE DB Destination 1"
+          TopLeft="1355.99997979402,725.333322525025" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Data Conversion 1"
+          TopLeft="373.333323233657,181.716666479094" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Script Component"
+          TopLeft="991.999985218048,605.999990969896" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Derived Column 1"
+          TopLeft="228.124992668421,256.249999464138" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Row Count 1"
+          TopLeft="1128.66664984822,725.999989181757" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Lookup 1"
+          TopLeft="169.714283628123,505.714280307293" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Foreach Loop Container\Leave Table\Row Count"
+          TopLeft="383.999994277954,48.9999992698431" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Foreach Loop Container\Leave Table\Conditional Split"
           TopLeft="611.599985711441,91.9333336244034" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup Match Output]"
-          TopLeft="69.099994954301,379.266665949756">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Conditional Split Error Output]"
+          TopLeft="712.666652378108,133.533333624403">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="149.522224850622,32.8444425039814"
+              EndConnector="476.666664722894,396.466658477981"
               Start="0,0"
-              End="149.522224850622,25.3444425039814">
+              End="476.666664722894,388.966658477981">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.39538047221201" />
+                    End="0,262.566319864035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.39538047221201"
-                    Point2="0,13.395380472212"
-                    Point3="4,13.395380472212" />
+                    Point1="0,262.566319864035"
+                    Point2="0,266.566319864035"
+                    Point3="4,266.566319864035" />
                   <mssgle:LineSegment
-                    End="145.522224850622,13.395380472212" />
+                    End="472.666664722894,266.566319864035" />
                   <mssgle:CubicBezierSegment
-                    Point1="145.522224850622,13.395380472212"
-                    Point2="149.522224850622,13.395380472212"
-                    Point3="149.522224850622,17.395380472212" />
+                    Point1="472.666664722894,266.566319864035"
+                    Point2="476.666664722894,266.566319864035"
+                    Point3="476.666664722894,270.566319864035" />
                   <mssgle:LineSegment
-                    End="149.522224850622,25.3444425039814" />
+                    End="476.666664722894,388.966658477981" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="26.5697257065611,18.395380472212,96.3827734375,11.609375"
+              BoundingBox="172.639426111447,271.566319864035,131.3878125,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Derived Column Output]"
-          TopLeft="283.324992668421,297.849999464138">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-195.42499771412,39.816666485618"
-              Start="0,0"
-              End="-195.42499771412,32.316666485618">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.1608822794567" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.1608822794567"
-                    Point2="0,16.1608822794567"
-                    Point3="-4,16.1608822794567" />
-                  <mssgle:LineSegment
-                    End="-191.42499771412,16.1608822794567" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-191.42499771412,16.1608822794567"
-                    Point2="-195.42499771412,16.1608822794567"
-                    Point3="-195.42499771412,20.1608822794567" />
-                  <mssgle:LineSegment
-                    End="-195.42499771412,32.316666485618" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Data Conversion Output]"
-          TopLeft="429.333323233657,223.316666479094">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-120.408330565236,32.9333329850438"
-              Start="0,0"
-              End="-120.408330565236,25.4333329850438">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.36425106639457" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.36425106639457"
-                    Point2="0,13.3642510663946"
-                    Point3="-4,13.3642510663946" />
-                  <mssgle:LineSegment
-                    End="-116.408330565236,13.3642510663946" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-116.408330565236,13.3642510663946"
-                    Point2="-120.408330565236,13.3642510663946"
-                    Point3="-120.408330565236,17.3642510663946" />
-                  <mssgle:LineSegment
-                    End="-120.408330565236,25.4333329850438" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9399,36 +9359,54 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Row Count"
-          TopLeft="383.999994277954,48.9999992698431" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Excel Source Output]"
-          TopLeft="236.499997754063,30.4666674166918">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Union All Output 1]"
+          TopLeft="1149.333317101,571.599992102385">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147.499996523891,39.3333318531513"
+              EndConnector="-76.5333318829541,34.3999988675118"
               Start="0,0"
-              End="139.999996523891,39.3333318531513">
+              End="-76.5333318829541,26.8999988675118">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="69.7499982619454,0" />
+                    End="0,13.1999994337559" />
                   <mssgle:CubicBezierSegment
-                    Point1="69.7499982619454,0"
-                    Point2="73.7499982619454,0"
-                    Point3="73.7499982619454,4" />
+                    Point1="0,13.1999994337559"
+                    Point2="0,17.1999994337559"
+                    Point3="-4,17.1999994337559" />
                   <mssgle:LineSegment
-                    End="73.7499982619454,35.3333318531513" />
+                    End="-72.5333318829541,17.1999994337559" />
                   <mssgle:CubicBezierSegment
-                    Point1="73.7499982619454,35.3333318531513"
-                    Point2="73.7499982619454,39.3333318531513"
-                    Point3="77.7499982619454,39.3333318531513" />
+                    Point1="-72.5333318829541,17.1999994337559"
+                    Point2="-76.5333318829541,17.1999994337559"
+                    Point3="-76.5333318829541,21.1999994337559" />
                   <mssgle:LineSegment
-                    End="139.999996523891,39.3333318531513" />
+                    End="-76.5333318829541,26.8999988675118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Row Count Output 11]"
+          TopLeft="1267.06664984822,746.466655853391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88.9333299458026,0"
+              Start="0,0"
+              End="81.4333299458026,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="81.4333299458026,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9471,187 +9449,181 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Union All"
-          TopLeft="1089.333317101,529.999992102385" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Excel Source Error Output]"
-          TopLeft="162.499997754063,51.2666674166918">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Output 0]"
+          TopLeft="1072.79998521805,647.599990969896">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="962.833319346939,478.733324685693"
+              EndConnector="-145.733331227303,58.3999985098839"
               Start="0,0"
-              End="962.833319346939,471.233324685693">
+              End="-145.733331227303,50.8999985098839">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,295.208327928558" />
+                    End="0,25.1999992549419" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,295.208327928558"
-                    Point2="0,299.208327928558"
-                    Point3="4,299.208327928558" />
+                    Point1="0,25.1999992549419"
+                    Point2="0,29.1999992549419"
+                    Point3="-4,29.1999992549419" />
                   <mssgle:LineSegment
-                    End="958.833319346939,299.208327928558" />
+                    End="-141.733331227303,29.1999992549419" />
                   <mssgle:CubicBezierSegment
-                    Point1="958.833319346939,299.208327928558"
-                    Point2="962.833319346939,299.208327928558"
-                    Point3="962.833319346939,303.208327928558" />
+                    Point1="-141.733331227303,29.1999992549419"
+                    Point2="-145.733331227303,29.1999992549419"
+                    Point3="-145.733331227303,33.1999992549419" />
                   <mssgle:LineSegment
-                    End="962.833319346939,471.233324685693" />
+                    End="-145.733331227303,50.8999985098839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Leave Table.Paths[OLE DB Destination Error Output]"
+          TopLeft="271.676189873048,613.983329380138">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="817.657127227954,-63.1833372777539"
+              Start="0,0"
+              End="810.157127227954,-63.1833372777539">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="404.828563613977,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="404.828563613977,0"
+                    Point2="408.828563613977,0"
+                    Point3="408.828563613977,-4" />
+                  <mssgle:LineSegment
+                    End="408.828563613977,-59.1833372777539" />
+                  <mssgle:CubicBezierSegment
+                    Point1="408.828563613977,-59.1833372777539"
+                    Point2="408.828563613977,-63.1833372777539"
+                    Point3="412.828563613977,-63.1833372777539" />
+                  <mssgle:LineSegment
+                    End="810.157127227954,-63.1833372777539" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="423.565272954719,304.208327928558,115.7027734375,11.609375"
+              BoundingBox="335.619657363977,1,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Conditional Split Error Output]"
-          TopLeft="712.666652378108,133.533333624403">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup No Match Output]"
+          TopLeft="230.114283628123,547.314280307293">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="476.666664722894,396.466658477981"
+              EndConnector="-44.038093755075,45.8690490728455"
               Start="0,0"
-              End="476.666664722894,388.966658477981">
+              End="-44.038093755075,38.3690490728455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,262.566319864035" />
+                    End="0,18.9345245364228" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,262.566319864035"
-                    Point2="0,266.566319864035"
-                    Point3="4,266.566319864035" />
+                    Point1="0,18.9345245364228"
+                    Point2="0,22.9345245364228"
+                    Point3="-4,22.9345245364228" />
                   <mssgle:LineSegment
-                    End="472.666664722894,266.566319864035" />
+                    End="-40.038093755075,22.9345245364228" />
                   <mssgle:CubicBezierSegment
-                    Point1="472.666664722894,266.566319864035"
-                    Point2="476.666664722894,266.566319864035"
-                    Point3="476.666664722894,270.566319864035" />
+                    Point1="-40.038093755075,22.9345245364228"
+                    Point2="-44.038093755075,22.9345245364228"
+                    Point3="-44.038093755075,26.9345245364228" />
                   <mssgle:LineSegment
-                    End="476.666664722894,388.966658477981" />
+                    End="-44.038093755075,38.3690490728455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="172.639426111447,271.566319864035,131.3878125,11.609375"
+              BoundingBox="-77.8254335962875,27.9345245364228,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Data Conversion Error Output]"
-          TopLeft="481.333323233657,223.316666479094">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup Match Output1]"
+          TopLeft="201.155553138256,453.711108453737">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="691.999993867345,306.683325623291"
+              EndConnector="28.9587304898667,52.0031718535557"
               Start="0,0"
-              End="691.999993867345,299.183325623291">
+              End="28.9587304898667,44.5031718535557">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,159.253481320383" />
+                    End="0,17.2376589947388" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,159.253481320383"
-                    Point2="0,163.253481320383"
-                    Point3="4,163.253481320383" />
+                    Point1="0,17.2376589947388"
+                    Point2="0,21.2376589947388"
+                    Point3="4,21.2376589947388" />
                   <mssgle:LineSegment
-                    End="687.999993867345,163.253481320383" />
+                    End="24.9587304898667,21.2376589947388" />
                   <mssgle:CubicBezierSegment
-                    Point1="687.999993867345,163.253481320383"
-                    Point2="691.999993867345,163.253481320383"
-                    Point3="691.999993867345,167.253481320383" />
+                    Point1="24.9587304898667,21.2376589947388"
+                    Point2="28.9587304898667,21.2376589947388"
+                    Point3="28.9587304898667,25.2376589947388" />
                   <mssgle:LineSegment
-                    End="691.999993867345,299.183325623291" />
+                    End="28.9587304898667,44.5031718535557" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="279.913610214923,168.253481320383,132.1727734375,11.43359375"
+              BoundingBox="-33.7120214738166,26.2376589947388,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Derived Column Error Output]"
-          TopLeft="334.524992668421,297.849999464138">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup Match Output]"
+          TopLeft="69.099994954301,379.266665949756">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="822.808324432581,232.149992638247"
+              EndConnector="149.522224850622,32.8444425039814"
               Start="0,0"
-              End="822.808324432581,224.649992638247">
+              End="149.522224850622,25.3444425039814">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,98.331874949142" />
+                    End="0,9.39538047221201" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,98.331874949142"
-                    Point2="0,102.331874949142"
-                    Point3="4,102.331874949142" />
+                    Point1="0,9.39538047221201"
+                    Point2="0,13.395380472212"
+                    Point3="4,13.395380472212" />
                   <mssgle:LineSegment
-                    End="818.808324432581,102.331874949142" />
+                    End="145.522224850622,13.395380472212" />
                   <mssgle:CubicBezierSegment
-                    Point1="818.808324432581,102.331874949142"
-                    Point2="822.808324432581,102.331874949142"
-                    Point3="822.808324432581,106.331874949142" />
+                    Point1="145.522224850622,13.395380472212"
+                    Point2="149.522224850622,13.395380472212"
+                    Point3="149.522224850622,17.395380472212" />
                   <mssgle:LineSegment
-                    End="822.808324432581,224.649992638247" />
+                    End="149.522224850622,25.3444425039814" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="346.442775497541,107.331874949142,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup Error Output]"
-          TopLeft="106.699994954301,379.266665949756">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="1002.6333221467,150.733326152629"
-              Start="0,0"
-              End="1002.6333221467,143.233326152629">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,97.5740772346008" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,97.5740772346008"
-                    Point2="0,101.574077234601"
-                    Point3="4,101.574077234601" />
-                  <mssgle:LineSegment
-                    End="998.633322146701,101.574077234601" />
-                  <mssgle:CubicBezierSegment
-                    Point1="998.633322146701,101.574077234601"
-                    Point2="1002.6333221467,101.574077234601"
-                    Point3="1002.6333221467,105.574077234601" />
-                  <mssgle:LineSegment
-                    End="1002.6333221467,143.233326152629" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="455.450274354601,106.574077234601,91.7327734375,11.609375"
+              BoundingBox="26.5697257065611,18.395380472212,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9692,79 +9664,67 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[OLE DB Destination Error Output]"
-          TopLeft="271.676189873048,613.983329380138">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup Error Output]"
+          TopLeft="106.699994954301,379.266665949756">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="817.657127227954,-63.1833372777539"
+              EndConnector="1002.6333221467,150.733326152629"
               Start="0,0"
-              End="810.157127227954,-63.1833372777539">
+              End="1002.6333221467,143.233326152629">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="404.828563613977,0" />
+                    End="0,97.5740772346008" />
                   <mssgle:CubicBezierSegment
-                    Point1="404.828563613977,0"
-                    Point2="408.828563613977,0"
-                    Point3="408.828563613977,-4" />
+                    Point1="0,97.5740772346008"
+                    Point2="0,101.574077234601"
+                    Point3="4,101.574077234601" />
                   <mssgle:LineSegment
-                    End="408.828563613977,-59.1833372777539" />
+                    End="998.633322146701,101.574077234601" />
                   <mssgle:CubicBezierSegment
-                    Point1="408.828563613977,-59.1833372777539"
-                    Point2="408.828563613977,-63.1833372777539"
-                    Point3="412.828563613977,-63.1833372777539" />
+                    Point1="998.633322146701,101.574077234601"
+                    Point2="1002.6333221467,101.574077234601"
+                    Point3="1002.6333221467,105.574077234601" />
                   <mssgle:LineSegment
-                    End="810.157127227954,-63.1833372777539" />
+                    End="1002.6333221467,143.233326152629" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="335.619657363977,1,146.4178125,11.43359375"
+              BoundingBox="455.450274354601,106.574077234601,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Script Component"
-          TopLeft="991.999985218048,605.999990969896" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Derived Column"
-          TopLeft="850.666653990745,705.99998947978" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\OLE DB Destination 1"
-          TopLeft="1355.99997979402,725.333322525025" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Union All Output 1]"
-          TopLeft="1149.333317101,571.599992102385">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Excel Source Output]"
+          TopLeft="236.499997754063,30.4666674166918">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-76.5333318829541,34.3999988675118"
+              EndConnector="147.499996523891,39.3333318531513"
               Start="0,0"
-              End="-76.5333318829541,26.8999988675118">
+              End="139.999996523891,39.3333318531513">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.1999994337559" />
+                    End="69.7499982619454,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.1999994337559"
-                    Point2="0,17.1999994337559"
-                    Point3="-4,17.1999994337559" />
+                    Point1="69.7499982619454,0"
+                    Point2="73.7499982619454,0"
+                    Point3="73.7499982619454,4" />
                   <mssgle:LineSegment
-                    End="-72.5333318829541,17.1999994337559" />
+                    End="73.7499982619454,35.3333318531513" />
                   <mssgle:CubicBezierSegment
-                    Point1="-72.5333318829541,17.1999994337559"
-                    Point2="-76.5333318829541,17.1999994337559"
-                    Point3="-76.5333318829541,21.1999994337559" />
+                    Point1="73.7499982619454,35.3333318531513"
+                    Point2="73.7499982619454,39.3333318531513"
+                    Point3="77.7499982619454,39.3333318531513" />
                   <mssgle:LineSegment
-                    End="-76.5333318829541,26.8999988675118" />
+                    End="139.999996523891,39.3333318531513" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9773,42 +9733,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Row Count 1"
-          TopLeft="1128.66664984822,725.999989181757" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Output 0]"
-          TopLeft="1072.79998521805,647.599990969896">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Excel Source Error Output]"
+          TopLeft="162.499997754063,51.2666674166918">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-145.733331227303,58.3999985098839"
+              EndConnector="962.833319346939,478.733324685693"
               Start="0,0"
-              End="-145.733331227303,50.8999985098839">
+              End="962.833319346939,471.233324685693">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.1999992549419" />
+                    End="0,295.208327928558" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.1999992549419"
-                    Point2="0,29.1999992549419"
-                    Point3="-4,29.1999992549419" />
+                    Point1="0,295.208327928558"
+                    Point2="0,299.208327928558"
+                    Point3="4,299.208327928558" />
                   <mssgle:LineSegment
-                    End="-141.733331227303,29.1999992549419" />
+                    End="958.833319346939,299.208327928558" />
                   <mssgle:CubicBezierSegment
-                    Point1="-141.733331227303,29.1999992549419"
-                    Point2="-145.733331227303,29.1999992549419"
-                    Point3="-145.733331227303,33.1999992549419" />
+                    Point1="958.833319346939,299.208327928558"
+                    Point2="962.833319346939,299.208327928558"
+                    Point3="962.833319346939,303.208327928558" />
                   <mssgle:LineSegment
-                    End="-145.733331227303,50.8999985098839" />
+                    End="962.833319346939,471.233324685693" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="423.565272954719,304.208327928558,115.7027734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9846,19 +9804,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Row Count Output 11]"
-          TopLeft="1267.06664984822,746.466655853391">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Derived Column Output]"
+          TopLeft="283.324992668421,297.849999464138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88.9333299458026,0"
+              EndConnector="-195.42499771412,39.816666485618"
               Start="0,0"
-              End="81.4333299458026,0">
+              End="-195.42499771412,32.316666485618">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="81.4333299458026,0" />
+                    End="0,12.1608822794567" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1608822794567"
+                    Point2="0,16.1608822794567"
+                    Point3="-4,16.1608822794567" />
+                  <mssgle:LineSegment
+                    End="-191.42499771412,16.1608822794567" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-191.42499771412,16.1608822794567"
+                    Point2="-195.42499771412,16.1608822794567"
+                    Point3="-195.42499771412,20.1608822794567" />
+                  <mssgle:LineSegment
+                    End="-195.42499771412,32.316666485618" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9867,85 +9837,138 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Foreach Loop Container\Leave Table\Lookup 1"
-          TopLeft="169.714283628123,505.714280307293" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup Match Output1]"
-          TopLeft="201.155553138256,453.711108453737">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Derived Column Error Output]"
+          TopLeft="334.524992668421,297.849999464138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.9587304898667,52.0031718535557"
+              EndConnector="822.808324432581,232.149992638247"
               Start="0,0"
-              End="28.9587304898667,44.5031718535557">
+              End="822.808324432581,224.649992638247">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.2376589947388" />
+                    End="0,98.331874949142" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.2376589947388"
-                    Point2="0,21.2376589947388"
-                    Point3="4,21.2376589947388" />
+                    Point1="0,98.331874949142"
+                    Point2="0,102.331874949142"
+                    Point3="4,102.331874949142" />
                   <mssgle:LineSegment
-                    End="24.9587304898667,21.2376589947388" />
+                    End="818.808324432581,102.331874949142" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.9587304898667,21.2376589947388"
-                    Point2="28.9587304898667,21.2376589947388"
-                    Point3="28.9587304898667,25.2376589947388" />
+                    Point1="818.808324432581,102.331874949142"
+                    Point2="822.808324432581,102.331874949142"
+                    Point3="822.808324432581,106.331874949142" />
                   <mssgle:LineSegment
-                    End="28.9587304898667,44.5031718535557" />
+                    End="822.808324432581,224.649992638247" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-33.7120214738166,26.2376589947388,96.3827734375,11.609375"
+              BoundingBox="346.442775497541,107.331874949142,129.9227734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Leave Table.Paths[Lookup No Match Output]"
-          TopLeft="230.114283628123,547.314280307293">
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Data Conversion Output]"
+          TopLeft="429.333323233657,223.316666479094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-44.038093755075,45.8690490728455"
+              EndConnector="-120.408330565236,32.9333329850438"
               Start="0,0"
-              End="-44.038093755075,38.3690490728455">
+              End="-120.408330565236,25.4333329850438">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.9345245364228" />
+                    End="0,9.36425106639457" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.9345245364228"
-                    Point2="0,22.9345245364228"
-                    Point3="-4,22.9345245364228" />
+                    Point1="0,9.36425106639457"
+                    Point2="0,13.3642510663946"
+                    Point3="-4,13.3642510663946" />
                   <mssgle:LineSegment
-                    End="-40.038093755075,22.9345245364228" />
+                    End="-116.408330565236,13.3642510663946" />
                   <mssgle:CubicBezierSegment
-                    Point1="-40.038093755075,22.9345245364228"
-                    Point2="-44.038093755075,22.9345245364228"
-                    Point3="-44.038093755075,26.9345245364228" />
+                    Point1="-116.408330565236,13.3642510663946"
+                    Point2="-120.408330565236,13.3642510663946"
+                    Point3="-120.408330565236,17.3642510663946" />
                   <mssgle:LineSegment
-                    End="-44.038093755075,38.3690490728455" />
+                    End="-120.408330565236,25.4333329850438" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Leave Table.Paths[Data Conversion Error Output]"
+          TopLeft="481.333323233657,223.316666479094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="691.999993867345,306.683325623291"
+              Start="0,0"
+              End="691.999993867345,299.183325623291">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,159.253481320383" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,159.253481320383"
+                    Point2="0,163.253481320383"
+                    Point3="4,163.253481320383" />
+                  <mssgle:LineSegment
+                    End="687.999993867345,163.253481320383" />
+                  <mssgle:CubicBezierSegment
+                    Point1="687.999993867345,163.253481320383"
+                    Point2="691.999993867345,163.253481320383"
+                    Point3="691.999993867345,167.253481320383" />
+                  <mssgle:LineSegment
+                    End="691.999993867345,299.183325623291" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-77.8254335962875,27.9345245364228,111.6127734375,11.609375"
+              BoundingBox="279.913610214923,168.253481320383,132.1727734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Leave Table\Lookup 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Employee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Leave Table\Excel Source 1">
     <Properties>
@@ -9956,52 +9979,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Leave Table\Lookup 3">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Employee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Leave Table\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[WorkbookFile]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10018,15 +9995,114 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Leave Table\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[WorkbookFile]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Leave Table\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Leave Table\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Leave]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Foreach Loop Container\Timesheet Table">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Script Component"
+          TopLeft="4.99999972681194,532.133329632945" />
+        <NodeLayout
           Size="140,41.6"
           Id="Package\Foreach Loop Container\Timesheet Table\Excel Source"
           TopLeft="177.499990301828,36.5999998734395" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\OLE DB Destination"
+          TopLeft="606.666633519863,542.533329560624" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Row Count 1"
+          TopLeft="439.999975959461,507.866663135025" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Lookup 1"
+          TopLeft="378.541645984063,248.733331784474" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Row Count"
+          TopLeft="568.33330228097,61.0380949582845" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\OLE DB Destination 1"
+          TopLeft="809.642812905924,443.776187412478" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Lookup 2"
+          TopLeft="523.333304739662,345.466665159993" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Derived Column 1"
+          TopLeft="223.333321130938,516.933330139186" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Union All"
+          TopLeft="8.33333287801987,365.733330790069" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Foreach Loop Container\Timesheet Table\Lookup 3"
+          TopLeft="791.666623411909,365.33333202468" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Foreach Loop Container\Timesheet Table\Lookup"
@@ -10036,59 +10112,219 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Foreach Loop Container\Timesheet Table\Derived Column"
           TopLeft="539.899970632296,213.999998734395" />
         <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Lookup 2"
-          TopLeft="523.333304739662,345.466665159993" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Lookup 1"
-          TopLeft="378.541645984063,248.733331784474" />
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\OLE DB Destination 1"
-          TopLeft="809.642812905924,443.776187412478" />
-        <NodeLayout
           Size="156,41.6"
           Id="Package\Foreach Loop Container\Timesheet Table\Data Conversion"
           TopLeft="284.047603527942,109.942856378328" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output1]"
-          TopLeft="457.741645984063,290.333331784474">
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Union All Output 1]"
+          TopLeft="68.3333328780199,407.333330790069">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.9916587556,55.1333333755197"
+              EndConnector="17.4666668487921,124.799998842876"
               Start="0,0"
-              End="125.9916587556,47.6333333755197">
+              End="17.4666668487921,117.299998842876">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4857516511924" />
+                    End="0,58.3999994214378" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.4857516511924"
-                    Point2="0,22.4857516511924"
-                    Point3="4,22.4857516511924" />
+                    Point1="0,58.3999994214378"
+                    Point2="0,62.3999994214378"
+                    Point3="4,62.3999994214378" />
                   <mssgle:LineSegment
-                    End="121.9916587556,22.4857516511924" />
+                    End="13.4666668487921,62.3999994214378" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.9916587556,22.4857516511924"
-                    Point2="125.9916587556,22.4857516511924"
-                    Point3="125.9916587556,26.4857516511924" />
+                    Point1="13.4666668487921,62.3999994214378"
+                    Point2="17.4666668487921,62.3999994214378"
+                    Point3="17.4666668487921,66.3999994214378" />
                   <mssgle:LineSegment
-                    End="125.9916587556,47.6333333755197" />
+                    End="17.4666668487921,117.299998842876" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Row Count Output 11]"
+          TopLeft="578.399975959461,528.666663135025">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.2666575604019,34.666666425599"
+              Start="0,0"
+              End="20.7666575604019,34.666666425599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="10.1333287802009,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.1333287802009,0"
+                    Point2="14.1333287802009,0"
+                    Point3="14.1333287802009,4" />
+                  <mssgle:LineSegment
+                    End="14.1333287802009,30.666666425599" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.1333287802009,30.666666425599"
+                    Point2="14.1333287802009,34.666666425599"
+                    Point3="18.1333287802009,34.666666425599" />
+                  <mssgle:LineSegment
+                    End="20.7666575604019,34.666666425599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Row Count Output 1]"
+          TopLeft="568.33330228097,87.4380949582846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-128.285698753029,43.3047614200437"
+              Start="0,0"
+              End="-120.785698753029,43.3047614200437">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-50.1650728068344,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.1650728068344,0"
+                    Point2="-54.1650728068344,0"
+                    Point3="-54.1650728068344,4" />
+                  <mssgle:LineSegment
+                    End="-54.1650728068344,39.3047614200437" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-54.1650728068344,39.3047614200437"
+                    Point2="-54.1650728068344,43.3047614200437"
+                    Point3="-58.1650728068344,43.3047614200437" />
+                  <mssgle:LineSegment
+                    End="-120.785698753029,43.3047614200437" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Output 0]"
+          TopLeft="166.599999726812,552.933329632945">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.7333214041265,-15.1999994937584"
+              Start="0,0"
+              End="49.2333214041265,-15.1999994937584">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.3666607020632,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.3666607020632,0"
+                    Point2="28.3666607020632,0"
+                    Point3="28.3666607020632,-4" />
+                  <mssgle:LineSegment
+                    End="28.3666607020632,-11.1999994937584" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.3666607020632,-11.1999994937584"
+                    Point2="28.3666607020632,-15.1999994937584"
+                    Point3="32.3666607020632,-15.1999994937584" />
+                  <mssgle:LineSegment
+                    End="49.2333214041265,-15.1999994937584" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup No Match Output]"
+          TopLeft="852.066623411909,406.93333202468">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.5761894940151,36.8428553877974"
+              Start="0,0"
+              End="47.5761894940151,29.3428553877974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.4214276938987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4214276938987"
+                    Point2="0,18.4214276938987"
+                    Point3="4,18.4214276938987" />
+                  <mssgle:LineSegment
+                    End="43.5761894940151,18.4214276938987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.5761894940151,18.4214276938987"
+                    Point2="47.5761894940151,18.4214276938987"
+                    Point3="47.5761894940151,22.4214276938987" />
+                  <mssgle:LineSegment
+                    End="47.5761894940151,29.3428553877974" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="14.8044426590498,27.4857516511924,96.3827734375,11.609375"
+              BoundingBox="-32.0182919717424,23.4214276938987,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output]"
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output2]"
+          TopLeft="644.133304739662,366.266665159993">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.533318672247,19.8666668646869"
+              Start="0,0"
+              End="140.033318672247,19.8666668646869">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.7666593361234,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.7666593361234,0"
+                    Point2="73.7666593361234,0"
+                    Point3="73.7666593361234,4" />
+                  <mssgle:LineSegment
+                    End="73.7666593361234,15.8666668646869" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.7666593361234,15.8666668646869"
+                    Point2="73.7666593361234,19.8666668646869"
+                    Point3="77.7666593361234,19.8666668646869" />
+                  <mssgle:LineSegment
+                    End="140.033318672247,19.8666668646869" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.5752726173734,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output1]"
           TopLeft="138.799995628993,190.599999186397">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10124,199 +10360,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Derived Column Output]"
-          TopLeft="592.166637298963,213.999998734395">
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output]"
+          TopLeft="457.741645984063,290.333331784474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-427.16664166997,-23.3999995479986"
+              EndConnector="125.9916587556,55.1333333755197"
               Start="0,0"
-              End="-427.16664166997,-15.8999995479986">
+              End="125.9916587556,47.6333333755197">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-9.12614263186613" />
+                    End="0,18.4857516511924" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-9.12614263186613"
-                    Point2="0,-13.1261426318661"
-                    Point3="-4,-13.1261426318661" />
+                    Point1="0,18.4857516511924"
+                    Point2="0,22.4857516511924"
+                    Point3="4,22.4857516511924" />
                   <mssgle:LineSegment
-                    End="-423.16664166997,-13.1261426318661" />
+                    End="121.9916587556,22.4857516511924" />
                   <mssgle:CubicBezierSegment
-                    Point1="-423.16664166997,-13.1261426318661"
-                    Point2="-427.16664166997,-13.1261426318661"
-                    Point3="-427.16664166997,-17.1261426318661" />
+                    Point1="121.9916587556,22.4857516511924"
+                    Point2="125.9916587556,22.4857516511924"
+                    Point3="125.9916587556,26.4857516511924" />
                   <mssgle:LineSegment
-                    End="-427.16664166997,-15.8999995479986" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Row Count"
-          TopLeft="568.33330228097,61.0380949582845" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Row Count Output 1]"
-          TopLeft="568.33330228097,87.4380949582846">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-128.285698753029,43.3047614200437"
-              Start="0,0"
-              End="-120.785698753029,43.3047614200437">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-50.1650728068344,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-50.1650728068344,0"
-                    Point2="-54.1650728068344,0"
-                    Point3="-54.1650728068344,4" />
-                  <mssgle:LineSegment
-                    End="-54.1650728068344,39.3047614200437" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-54.1650728068344,39.3047614200437"
-                    Point2="-54.1650728068344,43.3047614200437"
-                    Point3="-58.1650728068344,43.3047614200437" />
-                  <mssgle:LineSegment
-                    End="-120.785698753029,43.3047614200437" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Union All"
-          TopLeft="8.33333287801987,365.733330790069" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Derived Column 1"
-          TopLeft="223.333321130938,516.933330139186" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Script Component"
-          TopLeft="4.99999972681194,532.133329632945" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Excel Source Error Output]"
-          TopLeft="247.499990301828,78.1999998734395">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-197.833324090474,287.53333091663"
-              Start="0,0"
-              End="-197.833324090474,280.03333091663">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,166.249998569057" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,166.249998569057"
-                    Point2="0,170.249998569057"
-                    Point3="-4,170.249998569057" />
-                  <mssgle:LineSegment
-                    End="-193.833324090474,170.249998569057" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-193.833324090474,170.249998569057"
-                    Point2="-197.833324090474,170.249998569057"
-                    Point3="-197.833324090474,174.249998569057" />
-                  <mssgle:LineSegment
-                    End="-197.833324090474,280.03333091663" />
+                    End="125.9916587556,47.6333333755197" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-156.768048763987,175.249998569057,115.7027734375,11.609375"
+              BoundingBox="14.8044426590498,27.4857516511924,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Data Conversion Error Output]"
-          TopLeft="337.380936861275,151.542856378328">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-269.047603983255,214.190474411741"
-              Start="0,0"
-              End="-269.047603983255,206.690474411741">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,82.9809033144125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,82.9809033144125"
-                    Point2="0,86.9809033144125"
-                    Point3="-4,86.9809033144125" />
-                  <mssgle:LineSegment
-                    End="-265.047603983255,86.9809033144125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-265.047603983255,86.9809033144125"
-                    Point2="-269.047603983255,86.9809033144125"
-                    Point3="-269.047603983255,90.9809033144125" />
-                  <mssgle:LineSegment
-                    End="-269.047603983255,206.690474411741" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-200.610188710378,91.9809033144125,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Derived Column Error Output]"
-          TopLeft="616.299970632296,255.599998734395">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-510.633304420943,110.133332055674"
-              Start="0,0"
-              End="-510.633304420943,102.633332055674">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.9354829436341" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,75.9354829436341"
-                    Point2="0,79.9354829436341"
-                    Point3="-4,79.9354829436341" />
-                  <mssgle:LineSegment
-                    End="-506.633304420943,79.9354829436341" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-506.633304420943,79.9354829436341"
-                    Point2="-510.633304420943,79.9354829436341"
-                    Point3="-510.633304420943,83.9354829436341" />
-                  <mssgle:LineSegment
-                    End="-510.633304420943,102.633332055674" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-320.278038929221,84.9354829436341,129.9227734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output]"
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output2]"
           TopLeft="112.599995628993,190.599999186397">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10388,7 +10468,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output2]"
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Error Output]"
           TopLeft="523.333304739662,366.266665159993">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10421,150 +10501,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <mssgm:EdgeLabel
               BoundingBox="-243.366372649571,-17.609375,91.7327734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Union All Output 1]"
-          TopLeft="68.3333328780199,407.333330790069">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="17.4666668487921,124.799998842876"
-              Start="0,0"
-              End="17.4666668487921,117.299998842876">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.3999994214378" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,58.3999994214378"
-                    Point2="0,62.3999994214378"
-                    Point3="4,62.3999994214378" />
-                  <mssgle:LineSegment
-                    End="13.4666668487921,62.3999994214378" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.4666668487921,62.3999994214378"
-                    Point2="17.4666668487921,62.3999994214378"
-                    Point3="17.4666668487921,66.3999994214378" />
-                  <mssgle:LineSegment
-                    End="17.4666668487921,117.299998842876" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Output 0]"
-          TopLeft="166.599999726812,552.933329632945">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="56.7333214041265,-15.1999994937584"
-              Start="0,0"
-              End="49.2333214041265,-15.1999994937584">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="24.3666607020632,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24.3666607020632,0"
-                    Point2="28.3666607020632,0"
-                    Point3="28.3666607020632,-4" />
-                  <mssgle:LineSegment
-                    End="28.3666607020632,-11.1999994937584" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.3666607020632,-11.1999994937584"
-                    Point2="28.3666607020632,-15.1999994937584"
-                    Point3="32.3666607020632,-15.1999994937584" />
-                  <mssgle:LineSegment
-                    End="49.2333214041265,-15.1999994937584" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\OLE DB Destination"
-          TopLeft="606.666633519863,542.533329560624" />
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Row Count 1"
-          TopLeft="439.999975959461,507.866663135025" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Derived Column Output1]"
-          TopLeft="384.933321130938,537.733330139186">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="55.0666548285227,-9.06666700416088"
-              Start="0,0"
-              End="47.5666548285227,-9.06666700416088">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="23.5333274142614,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.5333274142614,0"
-                    Point2="27.5333274142614,0"
-                    Point3="27.5333274142614,-4" />
-                  <mssgle:LineSegment
-                    End="27.5333274142614,-5.06666700416088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.5333274142614,-5.06666700416088"
-                    Point2="27.5333274142614,-9.06666700416088"
-                    Point3="31.5333274142614,-9.06666700416088" />
-                  <mssgle:LineSegment
-                    End="47.5666548285227,-9.06666700416088" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Row Count Output 11]"
-          TopLeft="578.399975959461,528.666663135025">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28.2666575604019,34.666666425599"
-              Start="0,0"
-              End="20.7666575604019,34.666666425599">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="10.1333287802009,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.1333287802009,0"
-                    Point2="14.1333287802009,0"
-                    Point3="14.1333287802009,4" />
-                  <mssgle:LineSegment
-                    End="14.1333287802009,30.666666425599" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.1333287802009,30.666666425599"
-                    Point2="14.1333287802009,34.666666425599"
-                    Point3="18.1333287802009,34.666666425599" />
-                  <mssgle:LineSegment
-                    End="20.7666575604019,34.666666425599" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10602,6 +10538,146 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Excel Source Error Output]"
+          TopLeft="247.499990301828,78.1999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-197.833324090474,287.53333091663"
+              Start="0,0"
+              End="-197.833324090474,280.03333091663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,166.249998569057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,166.249998569057"
+                    Point2="0,170.249998569057"
+                    Point3="-4,170.249998569057" />
+                  <mssgle:LineSegment
+                    End="-193.833324090474,170.249998569057" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-193.833324090474,170.249998569057"
+                    Point2="-197.833324090474,170.249998569057"
+                    Point3="-197.833324090474,174.249998569057" />
+                  <mssgle:LineSegment
+                    End="-197.833324090474,280.03333091663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-156.768048763987,175.249998569057,115.7027734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Derived Column Output1]"
+          TopLeft="384.933321130938,537.733330139186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.0666548285227,-9.06666700416088"
+              Start="0,0"
+              End="47.5666548285227,-9.06666700416088">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5333274142614,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.5333274142614,0"
+                    Point2="27.5333274142614,0"
+                    Point3="27.5333274142614,-4" />
+                  <mssgle:LineSegment
+                    End="27.5333274142614,-5.06666700416088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5333274142614,-5.06666700416088"
+                    Point2="27.5333274142614,-9.06666700416088"
+                    Point3="31.5333274142614,-9.06666700416088" />
+                  <mssgle:LineSegment
+                    End="47.5666548285227,-9.06666700416088" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Derived Column Output]"
+          TopLeft="592.166637298963,213.999998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-427.16664166997,-23.3999995479986"
+              Start="0,0"
+              End="-427.16664166997,-15.8999995479986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-9.12614263186613" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-9.12614263186613"
+                    Point2="0,-13.1261426318661"
+                    Point3="-4,-13.1261426318661" />
+                  <mssgle:LineSegment
+                    End="-423.16664166997,-13.1261426318661" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-423.16664166997,-13.1261426318661"
+                    Point2="-427.16664166997,-13.1261426318661"
+                    Point3="-427.16664166997,-17.1261426318661" />
+                  <mssgle:LineSegment
+                    End="-427.16664166997,-15.8999995479986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Derived Column Error Output]"
+          TopLeft="616.299970632296,255.599998734395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-510.633304420943,110.133332055674"
+              Start="0,0"
+              End="-510.633304420943,102.633332055674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.9354829436341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,75.9354829436341"
+                    Point2="0,79.9354829436341"
+                    Point3="-4,79.9354829436341" />
+                  <mssgle:LineSegment
+                    End="-506.633304420943,79.9354829436341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-506.633304420943,79.9354829436341"
+                    Point2="-510.633304420943,79.9354829436341"
+                    Point3="-510.633304420943,83.9354829436341" />
+                  <mssgle:LineSegment
+                    End="-510.633304420943,102.633332055674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-320.278038929221,84.9354829436341,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Foreach Loop Container\Timesheet Table.Paths[Data Conversion Output]"
           TopLeft="386.714270194608,151.542856378328">
           <EdgeLayout.Curve>
@@ -10635,79 +10711,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Foreach Loop Container\Timesheet Table\Lookup 3"
-          TopLeft="791.666623411909,365.33333202468" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup Match Output2]"
-          TopLeft="644.133304739662,366.266665159993">
+          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Data Conversion Error Output]"
+          TopLeft="337.380936861275,151.542856378328">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147.533318672247,19.8666668646869"
+              EndConnector="-269.047603983255,214.190474411741"
               Start="0,0"
-              End="140.033318672247,19.8666668646869">
+              End="-269.047603983255,206.690474411741">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="69.7666593361234,0" />
+                    End="0,82.9809033144125" />
                   <mssgle:CubicBezierSegment
-                    Point1="69.7666593361234,0"
-                    Point2="73.7666593361234,0"
-                    Point3="73.7666593361234,4" />
+                    Point1="0,82.9809033144125"
+                    Point2="0,86.9809033144125"
+                    Point3="-4,86.9809033144125" />
                   <mssgle:LineSegment
-                    End="73.7666593361234,15.8666668646869" />
+                    End="-265.047603983255,86.9809033144125" />
                   <mssgle:CubicBezierSegment
-                    Point1="73.7666593361234,15.8666668646869"
-                    Point2="73.7666593361234,19.8666668646869"
-                    Point3="77.7666593361234,19.8666668646869" />
+                    Point1="-265.047603983255,86.9809033144125"
+                    Point2="-269.047603983255,86.9809033144125"
+                    Point3="-269.047603983255,90.9809033144125" />
                   <mssgle:LineSegment
-                    End="140.033318672247,19.8666668646869" />
+                    End="-269.047603983255,206.690474411741" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.5752726173734,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Timesheet Table.Paths[Lookup No Match Output]"
-          TopLeft="852.066623411909,406.93333202468">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47.5761894940151,36.8428553877974"
-              Start="0,0"
-              End="47.5761894940151,29.3428553877974">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.4214276938987" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.4214276938987"
-                    Point2="0,18.4214276938987"
-                    Point3="4,18.4214276938987" />
-                  <mssgle:LineSegment
-                    End="43.5761894940151,18.4214276938987" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.5761894940151,18.4214276938987"
-                    Point2="47.5761894940151,18.4214276938987"
-                    Point3="47.5761894940151,22.4214276938987" />
-                  <mssgle:LineSegment
-                    End="47.5761894940151,29.3428553877974" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.0182919717424,23.4214276938987,111.6127734375,11.609375"
+              BoundingBox="-200.610188710378,91.9809033144125,132.1727734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10716,88 +10752,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Timesheet Table\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Employee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup 2">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Description]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Client]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Timesheet Table\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10823,7 +10777,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Leave Table\OLE DB Destination 1">
+    design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Client]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Timesheet Table\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10836,12 +10813,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Description]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup 3">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -10851,7 +10851,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10859,22 +10859,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Foreach Loop Container\Leave Table\Lookup 1">
+    design-time-name="Package\Foreach Loop Container\Timesheet Table\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Leave]</Value>
+          type="q3:string">[dbo].[Employee]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
