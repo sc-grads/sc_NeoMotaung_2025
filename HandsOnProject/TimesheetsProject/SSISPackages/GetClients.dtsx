@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="GetClients"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{8DD15A4F-CA23-4B53-BFA9-8EE35DC9429C}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{7AC95A2A-F479-4E86-BB22-A0E6A0AF4CC3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -158,76 +158,6 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7929CB98-90CD-4599-8D5B-60D859EF447A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{BE4C0783-C5CB-433D-A48E-49CB421F562D}"
-          SQLTask:SqlStatementSource="INSERT INTO [dbo].[AuditLog] (&#xA;    PackageName, SheetFileName, ExecutionStatus, StartTime&#xA;)&#xA;OUTPUT INSERTED.AuditID&#xA;VALUES (?, ?,  'Running', GETDATE())"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::AuditID" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="System::PackageName"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="130"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::SheetFile"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="130"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task 1"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{302B9361-EF4F-489D-A600-1AEFDB72AD9A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task 1"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{BE4C0783-C5CB-433D-A48E-49CB421F562D}"
-          SQLTask:SqlStatementSource="UPDATE [dbo].[AuditLog]&#xA;SET &#xA;    EndTime = GETDATE(),&#xA;    ExecutionStatus = 'Completed',&#xA;    RowsProcessed = ?,&#xA;    RowsFailed = ?,&#xA;    TaskName = 'Import Client Data',&#xA;    Destination = 'Client'&#xA;WHERE AuditID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::RowsProcessed"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="2"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::RowsFailed"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="2"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="2"
-            SQLTask:DtsVariableName="User::AuditID"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="2"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Import Client Data"
       DTS:CreationName="Microsoft.Pipeline"
@@ -2079,13 +2009,83 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post-ExecLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{302B9361-EF4F-489D-A600-1AEFDB72AD9A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post-ExecLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BE4C0783-C5CB-433D-A48E-49CB421F562D}"
+          SQLTask:SqlStatementSource="UPDATE [dbo].[AuditLog]&#xA;SET &#xA;    EndTime = GETDATE(),&#xA;    ExecutionStatus = 'Completed',&#xA;    RowsProcessed = ?,&#xA;    RowsFailed = ?,&#xA;    TaskName = 'Import Client Data',&#xA;    Destination = 'Client'&#xA;WHERE AuditID = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::RowsProcessed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="2"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::RowsFailed"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="2"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::AuditID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="2"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre-Exec Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7929CB98-90CD-4599-8D5B-60D859EF447A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre-Exec Log"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BE4C0783-C5CB-433D-A48E-49CB421F562D}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[AuditLog] (&#xA;    PackageName, SheetFileName, ExecutionStatus, StartTime&#xA;)&#xA;OUTPUT INSERTED.AuditID&#xA;VALUES (?, ?,  'Running', GETDATE())"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::AuditID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::SheetFile"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{C2328655-4CE2-4DC2-AE3B-FD4B6C876B42}"
-      DTS:From="Package\Execute SQL Task"
+      DTS:From="Package\Pre-Exec Log"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Import Client Data" />
@@ -2096,7 +2096,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       DTS:From="Package\Import Client Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute SQL Task 1" />
+      DTS:To="Package\Post-ExecLog" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2111,31 +2111,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Pre-Exec Log"
+          TopLeft="298.333317033119,13.9333333031999" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Post-ExecLog"
+          TopLeft="285.833317716089,220.133331802554" />
+        <NodeLayout
           Size="162.4,41.6"
           Id="Package\Import Client Data"
           TopLeft="292.499984018505,116.999999186397" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="298.333317033119,13.9333333031999" />
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Execute SQL Task 1"
-          TopLeft="285.833317716089,220.133331802554" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="373.166650867297,158.599999186397">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="371.416650525812,55.5333333031999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.533332616157"
+              EndConnector="0,61.4666658831971"
               Start="0,0"
-              End="0,54.033332616157">
+              End="0,53.9666658831971">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.033332616157" />
+                    End="0,53.9666658831971" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2145,19 +2145,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="377.216650525812,55.5333333031999">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="373.699984018505,158.599999186397">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.4666658831968"
+              EndConnector="-16.266666302416,61.533332616157"
               Start="0,0"
-              End="0,53.9666658831968">
+              End="-16.266666302416,54.033332616157">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.9666658831968" />
+                    End="0,26.7666663080785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.7666663080785"
+                    Point2="0,30.7666663080785"
+                    Point3="-4,30.7666663080785" />
+                  <mssgle:LineSegment
+                    End="-12.266666302416,30.7666663080785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.266666302416,30.7666663080785"
+                    Point2="-16.266666302416,30.7666663080785"
+                    Point3="-16.266666302416,34.7666663080785" />
+                  <mssgle:LineSegment
+                    End="-16.266666302416,54.033332616157" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2175,9 +2187,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Import Client Data\Script Component"
+          TopLeft="206.666655374898,472.533331838714" />
+        <NodeLayout
           Size="140,41.6"
           Id="Package\Import Client Data\Excel Source"
           TopLeft="246.666653189395,59.7999995841583" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Import Client Data\Lookup"
+          TopLeft="472.619021796283,98.1904758891416" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Import Client Data\Union All"
+          TopLeft="69.1666628875668,416.399998083512" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Import Client Data\Derived Column"
+          TopLeft="74.9999959021809,530.733330482708" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Import Client Data\Row Count"
+          TopLeft="628.095203777629,100.28571358834" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Import Client Data\OLE DB Destination 1"
+          TopLeft="295.833317169713,555.266664563351" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Import Client Data\Data Conversion"
@@ -2186,44 +2222,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="171.2,41.6"
           Id="Package\Import Client Data\OLE DB Destination"
           TopLeft="199.16665578468,282.533331368632" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Import Client Data\Row Count"
-          TopLeft="628.095203777629,100.28571358834" />
-        <EdgeLayout
-          Id="Package\Import Client Data.Paths[Row Count Output 1]"
-          TopLeft="692.895203777629,141.88571358834">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.7285687552319,90.1523802308995"
-              Start="0,0"
-              End="-35.7285687552319,82.6523802308995">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.0761901154497" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.0761901154497"
-                    Point2="0,45.0761901154497"
-                    Point3="-4,45.0761901154497" />
-                  <mssgle:LineSegment
-                    End="-31.7285687552319,45.0761901154497" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.7285687552319,45.0761901154497"
-                    Point2="-35.7285687552319,45.0761901154497"
-                    Point3="-35.7285687552319,49.0761901154497" />
-                  <mssgle:LineSegment
-                    End="-35.7285687552319,82.6523802308995" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Client Data.Paths[Data Conversion Output]"
           TopLeft="579.166635022397,252.838093819239">
@@ -2255,50 +2253,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Import Client Data\Derived Column"
-          TopLeft="74.9999959021809,530.733330482708" />
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Import Client Data\Union All"
-          TopLeft="69.1666628875668,416.399998083512" />
-        <EdgeLayout
-          Id="Package\Import Client Data.Paths[Excel Source Error Output]"
-          TopLeft="316.666653189395,101.399999584158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-187.499990301828,314.999998499354"
-              Start="0,0"
-              End="-187.499990301828,307.499998499354">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,153.499999249677" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,153.499999249677"
-                    Point2="0,157.499999249677"
-                    Point3="-4,157.499999249677" />
-                  <mssgle:LineSegment
-                    End="-183.499990301828,157.499999249677" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-183.499990301828,157.499999249677"
-                    Point2="-187.499990301828,157.499999249677"
-                    Point3="-187.499990301828,161.499999249677" />
-                  <mssgle:LineSegment
-                    End="-187.499990301828,307.499998499354" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-151.601381869664,162.499999249677,115.7027734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2338,10 +2294,198 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Import Client Data\OLE DB Destination 1"
-          TopLeft="295.833317169713,555.266664563351" />
+        <EdgeLayout
+          Id="Package\Import Client Data.Paths[Union All Output 1]"
+          TopLeft="189.166662887567,437.199998083512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.2999924873315,35.3333337552017"
+              Start="0,0"
+              End="98.2999924873315,27.8333337552017">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="94.2999924873315,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.2999924873315,0"
+                    Point2="98.2999924873315,0"
+                    Point3="98.2999924873315,4" />
+                  <mssgle:LineSegment
+                    End="98.2999924873315,27.8333337552017" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Client Data.Paths[Row Count Output 1]"
+          TopLeft="692.895203777629,141.88571358834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.7285687552319,90.1523802308995"
+              Start="0,0"
+              End="-35.7285687552319,82.6523802308995">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0761901154497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0761901154497"
+                    Point2="0,45.0761901154497"
+                    Point3="-4,45.0761901154497" />
+                  <mssgle:LineSegment
+                    End="-31.7285687552319,45.0761901154497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.7285687552319,45.0761901154497"
+                    Point2="-35.7285687552319,45.0761901154497"
+                    Point3="-35.7285687552319,49.0761901154497" />
+                  <mssgle:LineSegment
+                    End="-35.7285687552319,82.6523802308995" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Client Data.Paths[Output 0]"
+          TopLeft="206.666655374898,493.333331838714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.2666594727174,37.3999986439943"
+              Start="0,0"
+              End="-55.2666594727174,29.8999986439943">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-51.2666594727174,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.2666594727174,0"
+                    Point2="-55.2666594727174,0"
+                    Point3="-55.2666594727174,4" />
+                  <mssgle:LineSegment
+                    End="-55.2666594727174,29.8999986439943" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Client Data.Paths[Lookup No Match Output]"
+          TopLeft="585.419021796283,120.038094738741">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.6761819813461,0"
+              Start="0,0"
+              End="35.1761819813461,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.1761819813461,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.218295728077,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Client Data.Paths[Excel Source Output]"
+          TopLeft="386.666653189395,80.5999995841583">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.9523686068876,38.3904763049833"
+              Start="0,0"
+              End="78.4523686068876,38.3904763049833">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.9761843034438,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.9761843034438,0"
+                    Point2="42.9761843034438,0"
+                    Point3="42.9761843034438,4" />
+                  <mssgle:LineSegment
+                    End="42.9761843034438,34.3904763049833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.9761843034438,34.3904763049833"
+                    Point2="42.9761843034438,38.3904763049833"
+                    Point3="46.9761843034438,38.3904763049833" />
+                  <mssgle:LineSegment
+                    End="78.4523686068876,38.3904763049833" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Client Data.Paths[Excel Source Error Output]"
+          TopLeft="316.666653189395,101.399999584158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.499990301828,314.999998499354"
+              Start="0,0"
+              End="-187.499990301828,307.499998499354">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.499999249677" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.499999249677"
+                    Point2="0,157.499999249677"
+                    Point3="-4,157.499999249677" />
+                  <mssgle:LineSegment
+                    End="-183.499990301828,157.499999249677" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.499990301828,157.499999249677"
+                    Point2="-187.499990301828,157.499999249677"
+                    Point3="-187.499990301828,161.499999249677" />
+                  <mssgle:LineSegment
+                    End="-187.499990301828,307.499998499354" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-151.601381869664,162.499999249677,115.7027734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Client Data.Paths[Derived Column Output]"
           TopLeft="227.799995902181,551.533330482708">
@@ -2378,133 +2522,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Import Client Data\Script Component"
-          TopLeft="206.666655374898,472.533331838714" />
-        <EdgeLayout
-          Id="Package\Import Client Data.Paths[Union All Output 1]"
-          TopLeft="189.166662887567,437.199998083512">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98.2999924873315,35.3333337552017"
-              Start="0,0"
-              End="98.2999924873315,27.8333337552017">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="94.2999924873315,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="94.2999924873315,0"
-                    Point2="98.2999924873315,0"
-                    Point3="98.2999924873315,4" />
-                  <mssgle:LineSegment
-                    End="98.2999924873315,27.8333337552017" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Client Data.Paths[Output 0]"
-          TopLeft="206.666655374898,493.333331838714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-55.2666594727174,37.3999986439943"
-              Start="0,0"
-              End="-55.2666594727174,29.8999986439943">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-51.2666594727174,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-51.2666594727174,0"
-                    Point2="-55.2666594727174,0"
-                    Point3="-55.2666594727174,4" />
-                  <mssgle:LineSegment
-                    End="-55.2666594727174,29.8999986439943" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Import Client Data\Lookup"
-          TopLeft="472.619021796283,98.1904758891416" />
-        <EdgeLayout
-          Id="Package\Import Client Data.Paths[Excel Source Output]"
-          TopLeft="386.666653189395,80.5999995841583">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.9523686068876,38.3904763049833"
-              Start="0,0"
-              End="78.4523686068876,38.3904763049833">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.9761843034438,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.9761843034438,0"
-                    Point2="42.9761843034438,0"
-                    Point3="42.9761843034438,4" />
-                  <mssgle:LineSegment
-                    End="42.9761843034438,34.3904763049833" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.9761843034438,34.3904763049833"
-                    Point2="42.9761843034438,38.3904763049833"
-                    Point3="46.9761843034438,38.3904763049833" />
-                  <mssgle:LineSegment
-                    End="78.4523686068876,38.3904763049833" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Client Data.Paths[Lookup No Match Output]"
-          TopLeft="585.419021796283,120.038094738741">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="42.6761819813461,0"
-              Start="0,0"
-              End="35.1761819813461,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="35.1761819813461,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-38.218295728077,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Import Client Data\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Client Data\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Client]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Client Data\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2526,42 +2584,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Client Data\OLE DB Destination 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Client Data\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Client]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

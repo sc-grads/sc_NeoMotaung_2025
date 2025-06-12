@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="GetEmployees"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{1CBC22D5-4F5B-474B-9E71-D260E57410DC}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{1D1F598F-2C9F-409D-A5A3-842AE25917C8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -783,7 +783,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::CurrentFullPath"
+                SQLTask:DtsVariableName="User::CurrentFolder"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
                 SQLTask:ParameterSize="-1" />
@@ -866,8 +866,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{26D2189C-0FEE-4C98-9A2E-6D4CACD54676}"
-          DTS:ObjectName="{26D2189C-0FEE-4C98-9A2E-6D4CACD54676}"
+          DTS:DTSID="{E2CBB235-6658-4060-852E-02F67787C897}"
+          DTS:ObjectName="{E2CBB235-6658-4060-852E-02F67787C897}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::CurrentFolder" />
       </DTS:ForEachVariableMappings>

@@ -11,8 +11,8 @@
   DTS:LocaleID="7177"
   DTS:ObjectName="DescriptionIntegrate"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{029D2487-E55A-4B10-B94F-81A0FA66BDF8}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{70177C7B-370E-414C-95E2-46963C10255E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -123,13 +123,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\Import Descriptions"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{550CDECD-0912-44DA-AD2E-2586E643DDF6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="Import Descriptions"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -137,7 +137,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\Derived Column"
+              refId="Package\Import Descriptions\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -145,39 +145,39 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Import Descriptions\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Derived Column.Inputs[Derived Column Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
+                      lineageId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[ErrorMessageOutput]"
+                      refId="Package\Import Descriptions\Derived Column.Inputs[Derived Column Input].Columns[ErrorMessageOutput]"
                       cachedDataType="wstr"
                       cachedLength="4000"
                       cachedName="ErrorMessageOutput"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]" />
+                      lineageId="Package\Import Descriptions\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import Descriptions\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrCode]"
+                      refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrCode]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrCode]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrCode]"
                       name="ErrCode"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -185,7 +185,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                          name="Expression">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -195,11 +195,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrTime]"
+                      refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrTime]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrTime]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrTime]"
                       name="ErrTime"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -217,12 +217,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrMessage]"
+                      refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrMessage]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="4000"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrMessage]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrMessage]"
                       name="ErrMessage"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -230,7 +230,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]}</property>
+                          name="Expression">#{Package\Import Descriptions\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -240,12 +240,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                      refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="35"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
                       name="FileName"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -266,23 +266,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Import Descriptions\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -291,7 +291,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Excel Source"
+              refId="Package\Import Descriptions\Excel Source"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Excel Source"
@@ -332,7 +332,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                  refId="Package\Import Descriptions\Excel Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
                   connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -340,50 +340,50 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                  refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output]"
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]"
+                      refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].Columns[Description]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="RedirectRow"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Description]"
+                      externalMetadataColumnId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].ExternalColumns[Description]"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]"
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].Columns[Description]"
                       name="Description"
                       truncationRowDisposition="RedirectRow" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Description]"
+                      refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].ExternalColumns[Description]"
                       dataType="wstr"
                       length="255"
                       name="Description" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                  refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output]"
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Description]"
+                      refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[Description]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Description]"
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[Description]"
                       name="Description" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -392,7 +392,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Lookup"
+              refId="Package\Import Descriptions\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -448,7 +448,7 @@ where [refTable].[DescText] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]};</property>
+                  name="ParameterMap">#{Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].Columns[Description]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -460,7 +460,7 @@ where [refTable].[DescText] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Import Descriptions\Lookup.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[SAMBE2025020.TimesheetDB]"
                   connectionManagerRefId="Package.ConnectionManagers[SAMBE2025020.TimesheetDB]"
                   description="Connection manager used to access lookup data."
@@ -468,15 +468,15 @@ where [refTable].[DescText] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Import Descriptions\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[Description]"
+                      refId="Package\Import Descriptions\Lookup.Inputs[Lookup Input].Columns[Description]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Description"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]">
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].Columns[Description]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -494,38 +494,38 @@ where [refTable].[DescText] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Import Descriptions\Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Import Descriptions\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Import Descriptions\Lookup.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Import Descriptions\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Import Descriptions\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Import Descriptions\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Descriptions\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -534,7 +534,7 @@ where [refTable].[DescText] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\Import Descriptions\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -591,7 +591,7 @@ where [refTable].[DescText] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Import Descriptions\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[SAMBE2025020.TimesheetDB]"
                   connectionManagerRefId="Package.ConnectionManagers[SAMBE2025020.TimesheetDB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -599,28 +599,28 @@ where [refTable].[DescText] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="RedirectRow"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Description]"
+                      refId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Description]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Description"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescText]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]" />
+                      externalMetadataColumnId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescText]"
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].Columns[Description]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionID]"
+                      refId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionID]"
                       dataType="i4"
                       name="DescriptionID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescText]"
+                      refId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescText]"
                       dataType="wstr"
                       length="50"
                       name="DescText" />
@@ -629,22 +629,22 @@ where [refTable].[DescText] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -653,7 +653,7 @@ where [refTable].[DescText] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination 1"
+              refId="Package\Import Descriptions\OLE DB Destination 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -710,7 +710,7 @@ where [refTable].[DescText] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                  refId="Package\Import Descriptions\OLE DB Destination 1.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[SAMBE2025020.TimesheetDB 1]"
                   connectionManagerRefId="Package.ConnectionManagers[SAMBE2025020.TimesheetDB 1]"
                   description="The OLE DB runtime connection used to access the database."
@@ -718,54 +718,54 @@ where [refTable].[DescText] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
+                      externalMetadataColumnId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrTime]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrTime]"
                       cachedDataType="dbTimeStamp"
                       cachedName="ErrTime"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
-                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[ErrTime]" />
+                      externalMetadataColumnId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      lineageId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output].Columns[ErrTime]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorMessageOutput]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorMessageOutput]"
                       cachedDataType="wstr"
                       cachedLength="4000"
                       cachedName="ErrorMessageOutput"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorMsg]"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]" />
+                      externalMetadataColumnId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorMsg]"
+                      lineageId="Package\Import Descriptions\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorID]"
                       dataType="i4"
                       name="ErrorID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SheetFileName]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SheetFileName]"
                       dataType="wstr"
                       length="255"
                       name="SheetFileName" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorMsg]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorMsg]"
                       dataType="wstr"
                       length="1000"
                       name="ErrorMsg" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ErrorTime]"
                       dataType="dbTimeStamp"
                       name="ErrorTime" />
                   </externalMetadataColumns>
@@ -773,22 +773,22 @@ where [refTable].[DescText] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Import Descriptions\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Descriptions\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -797,7 +797,7 @@ where [refTable].[DescText] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Row Count 1"
+              refId="Package\Import Descriptions\Row Count 1"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -810,7 +810,7 @@ where [refTable].[DescText] = ?</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Row Count 1.Inputs[Row Count Input 1]"
+                  refId="Package\Import Descriptions\Row Count 1.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -818,15 +818,15 @@ where [refTable].[DescText] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Row Count 1.Outputs[Row Count Output 1]"
+                  refId="Package\Import Descriptions\Row Count 1.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Data Flow Task\Row Count 1.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Descriptions\Row Count 1.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Row Count 2"
+              refId="Package\Import Descriptions\Row Count 2"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -839,7 +839,7 @@ where [refTable].[DescText] = ?</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Row Count 2.Inputs[Row Count Input 1]"
+                  refId="Package\Import Descriptions\Row Count 2.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -847,15 +847,15 @@ where [refTable].[DescText] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Row Count 2.Outputs[Row Count Output 1]"
+                  refId="Package\Import Descriptions\Row Count 2.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Data Flow Task\Row Count 2.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Descriptions\Row Count 2.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Row Count 3"
+              refId="Package\Import Descriptions\Row Count 3"
               componentClassID="Microsoft.RowCount"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -868,7 +868,7 @@ where [refTable].[DescText] = ?</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Row Count 3.Inputs[Row Count Input 1]"
+                  refId="Package\Import Descriptions\Row Count 3.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -876,15 +876,15 @@ where [refTable].[DescText] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Row Count 3.Outputs[Row Count Output 1]"
+                  refId="Package\Import Descriptions\Row Count 3.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Data Flow Task\Row Count 3.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Import Descriptions\Row Count 3.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Script Component"
+              refId="Package\Import Descriptions\Script Component"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;13"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
@@ -1759,30 +1759,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Script Component.Inputs[Input 0]"
+                  refId="Package\Import Descriptions\Script Component.Inputs[Input 0]"
                   hasSideEffects="true"
                   name="Input 0">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Script Component.Inputs[Input 0].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Script Component.Inputs[Input 0].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
+                      lineageId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Script Component.Outputs[Output 0]"
+                  refId="Package\Import Descriptions\Script Component.Outputs[Output 0]"
                   name="Output 0"
-                  synchronousInputId="Package\Data Flow Task\Script Component.Inputs[Input 0]">
+                  synchronousInputId="Package\Import Descriptions\Script Component.Inputs[Input 0]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]"
+                      refId="Package\Import Descriptions\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]"
                       dataType="wstr"
                       length="4000"
-                      lineageId="Package\Data Flow Task\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]"
+                      lineageId="Package\Import Descriptions\Script Component.Outputs[Output 0].Columns[ErrorMessageOutput]"
                       name="ErrorMessageOutput" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1790,7 +1790,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Union All"
+              refId="Package\Import Descriptions\Union All"
               componentClassID="Microsoft.UnionAll"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
@@ -1798,102 +1798,102 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               version="1">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  refId="Package\Import Descriptions\Union All.Inputs[Union All Input 1]"
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Description]"
+                      refId="Package\Import Descriptions\Union All.Inputs[Union All Input 1].Columns[Description]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Description"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Description]">
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[Description]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Description]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[Description]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]">
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]">
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  refId="Package\Import Descriptions\Union All.Inputs[Union All Input 2]"
                   hasSideEffects="true"
                   name="Union All Input 2">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Description]"
+                      refId="Package\Import Descriptions\Union All.Inputs[Union All Input 2].Columns[Description]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Description"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Description]">
+                      lineageId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output].Columns[Description]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Description]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[Description]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
+                      lineageId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
+                      lineageId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
+                          name="OutputColumnLineageID">#{Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  refId="Package\Import Descriptions\Union All.Inputs[Union All Input 3]"
                   dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 3">
@@ -1902,24 +1902,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  refId="Package\Import Descriptions\Union All.Outputs[Union All Output 1]"
                   name="Union All Output 1">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Description]"
+                      refId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[Description]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Description]"
+                      lineageId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[Description]"
                       name="Description" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      refId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
+                      lineageId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
                       name="ErrorCode" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      refId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
+                      lineageId="Package\Import Descriptions\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
                       name="ErrorColumn" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1929,101 +1929,67 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Row Count 2.Inputs[Row Count Input 1]"
+              refId="Package\Import Descriptions.Paths[Derived Column Output]"
+              endId="Package\Import Descriptions\Row Count 2.Inputs[Row Count Input 1]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Import Descriptions\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Excel Source Error Output]"
-              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              refId="Package\Import Descriptions.Paths[Excel Source Error Output]"
+              endId="Package\Import Descriptions\Union All.Inputs[Union All Input 1]"
               name="Excel Source Error Output"
-              startId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]" />
+              startId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Error Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Excel Source Output]"
-              endId="Package\Data Flow Task\Row Count 3.Inputs[Row Count Input 1]"
+              refId="Package\Import Descriptions.Paths[Excel Source Output]"
+              endId="Package\Import Descriptions\Row Count 3.Inputs[Row Count Input 1]"
               name="Excel Source Output"
-              startId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+              startId="Package\Import Descriptions\Excel Source.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task\Row Count 1.Inputs[Row Count Input 1]"
+              refId="Package\Import Descriptions.Paths[Lookup Match Output]"
+              endId="Package\Import Descriptions\Row Count 1.Inputs[Row Count Input 1]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Import Descriptions\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup No Match Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Import Descriptions.Paths[Lookup No Match Output]"
+              endId="Package\Import Descriptions\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Import Descriptions\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
-              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+              refId="Package\Import Descriptions.Paths[OLE DB Destination Error Output]"
+              endId="Package\Import Descriptions\Union All.Inputs[Union All Input 2]"
               name="OLE DB Destination Error Output"
-              startId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
+              startId="Package\Import Descriptions\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Output 0]"
-              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Import Descriptions.Paths[Output 0]"
+              endId="Package\Import Descriptions\Derived Column.Inputs[Derived Column Input]"
               name="Output 0"
-              startId="Package\Data Flow Task\Script Component.Outputs[Output 0]" />
+              startId="Package\Import Descriptions\Script Component.Outputs[Output 0]" />
             <path
-              refId="Package\Data Flow Task.Paths[Row Count Output 1]"
-              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              refId="Package\Import Descriptions.Paths[Row Count Output 1]"
+              endId="Package\Import Descriptions\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
-              startId="Package\Data Flow Task\Row Count 2.Outputs[Row Count Output 1]" />
+              startId="Package\Import Descriptions\Row Count 2.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\Data Flow Task.Paths[Row Count Output 11]"
-              endId="Package\Data Flow Task\Lookup.Inputs[Lookup Input]"
+              refId="Package\Import Descriptions.Paths[Row Count Output 11]"
+              endId="Package\Import Descriptions\Lookup.Inputs[Lookup Input]"
               name="Row Count Output 1"
-              startId="Package\Data Flow Task\Row Count 3.Outputs[Row Count Output 1]" />
+              startId="Package\Import Descriptions\Row Count 3.Outputs[Row Count Output 1]" />
             <path
-              refId="Package\Data Flow Task.Paths[Union All Output 1]"
-              endId="Package\Data Flow Task\Script Component.Inputs[Input 0]"
+              refId="Package\Import Descriptions.Paths[Union All Output 1]"
+              endId="Package\Import Descriptions\Script Component.Inputs[Input 0]"
               name="Union All Output 1"
-              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+              startId="Package\Import Descriptions\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{96DF9CDE-0C80-4712-9E9D-507EE21ACE96}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{F399499B-ECD1-4C13-A364-CF93543590CF}"
-          SQLTask:SqlStatementSource="INSERT INTO [dbo].[AuditLog] (&#xA;    PackageName, SheetFileName, ExecutionStatus, StartTime&#xA;)&#xA;OUTPUT INSERTED.AuditID&#xA;VALUES (?, ?,  'Running', GETDATE())"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::AuditID" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="System::PackageName"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="130"
-            SQLTask:ParameterSize="-1" />
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
-            SQLTask:DtsVariableName="User::WorkbookFile"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="130"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task 1"
+      DTS:refId="Package\Post-Exec Log"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{F4762F7E-4B1B-4894-8ABC-FEF1F7B21E4E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ObjectName="Post-Exec Log"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -2052,24 +2018,58 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre-Exec Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{96DF9CDE-0C80-4712-9E9D-507EE21ACE96}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre-Exec Log"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F399499B-ECD1-4C13-A364-CF93543590CF}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[AuditLog] (&#xA;    PackageName, SheetFileName, ExecutionStatus, StartTime&#xA;)&#xA;OUTPUT INSERTED.AuditID&#xA;VALUES (?, ?,  'Running', GETDATE())"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::AuditID" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::WorkbookFile"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{94EC2434-3F54-47BE-8E27-A67D05927314}"
-      DTS:From="Package\Execute SQL Task"
+      DTS:From="Package\Pre-Exec Log"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
+      DTS:To="Package\Import Descriptions" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{68DF67FF-A611-45C0-9357-E3AFD7E7278D}"
-      DTS:From="Package\Data Flow Task"
+      DTS:From="Package\Import Descriptions"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute SQL Task 1" />
+      DTS:To="Package\Post-Exec Log" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2084,31 +2084,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
+          Size="168,41.6"
+          Id="Package\Import Descriptions"
           TopLeft="226.666654282147,110.066665901277" />
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Execute SQL Task"
+          Size="141.6,41.6"
+          Id="Package\Pre-Exec Log"
           TopLeft="219.166654691929,19.9333331947194" />
         <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Execute SQL Task 1"
+          Size="145.6,41.6"
+          Id="Package\Post-Exec Log"
           TopLeft="219.166654691928,231.399998390873" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="301.716654487038,61.5333331947194">
+          TopLeft="289.966654691929,61.5333331947194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.5333327065574"
+              EndConnector="20.6999995902181,48.5333327065576"
               Start="0,0"
-              End="0,41.0333327065574">
+              End="20.6999995902181,41.0333327065576">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.0333327065574" />
+                    End="0,20.2666663532788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2666663532788"
+                    Point2="0,24.2666663532788"
+                    Point3="4,24.2666663532788" />
+                  <mssgle:LineSegment
+                    End="16.6999995902181,24.2666663532788" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.6999995902181,24.2666663532788"
+                    Point2="20.6999995902181,24.2666663532788"
+                    Point3="20.6999995902181,28.2666663532788" />
+                  <mssgle:LineSegment
+                    End="20.6999995902181,41.0333327065576" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2119,18 +2131,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="303.916654487038,151.666665901277">
+          TopLeft="310.666654282147,151.666665901277">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,79.7333324895965"
+              EndConnector="-18.699999590219,79.733332489596"
               Start="0,0"
-              End="0,72.2333324895965">
+              End="-18.699999590219,72.233332489596">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.2333324895965" />
+                    End="0,35.866666244798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.866666244798"
+                    Point2="0,39.866666244798"
+                    Point3="-4,39.866666244798" />
+                  <mssgle:LineSegment
+                    End="-14.699999590219,39.866666244798" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.699999590219,39.866666244798"
+                    Point2="-18.699999590219,39.866666244798"
+                    Point3="-18.699999590219,43.866666244798" />
+                  <mssgle:LineSegment
+                    End="-18.699999590219,72.233332489596" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2143,32 +2167,190 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\Import Descriptions">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="169.404752648895,258.638093439559" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Data Flow Task\Excel Source"
-          TopLeft="234.999987160167,25.1333331585593" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Data Flow Task\Derived Column"
-          TopLeft="532.648780421163,435.485710478567" />
+          Size="161.6,41.6"
+          Id="Package\Import Descriptions\Script Component"
+          TopLeft="669.077344395606,259.666665033433" />
         <NodeLayout
           Size="180,41.6"
-          Id="Package\Data Flow Task\OLE DB Destination 1"
+          Id="Package\Import Descriptions\OLE DB Destination 1"
           TopLeft="867.767809730113,442.685711346411" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Data Flow Task\Script Component"
-          TopLeft="669.077344395606,259.666665033433" />
+          Size="138.4,41.6"
+          Id="Package\Import Descriptions\Row Count 3"
+          TopLeft="446.428547036791,24.7619045897135" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Import Descriptions\OLE DB Destination"
+          TopLeft="169.404752648895,258.638093439559" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Import Descriptions\Row Count 2"
+          TopLeft="713.095199133434,395.428569672221" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Import Descriptions\Row Count 1"
+          TopLeft="541.666637071306,146.09523707931" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Import Descriptions\Excel Source"
+          TopLeft="234.999987160167,25.1333331585593" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Import Descriptions\Lookup"
+          TopLeft="382.142836263493,106.476189735768" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Import Descriptions\Derived Column"
+          TopLeft="532.648780421163,435.485710478567" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Import Descriptions\Union All"
+          TopLeft="440.476166409633,302.952379807309" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output 0]"
+          Id="Package\Import Descriptions.Paths[Derived Column Output]"
+          TopLeft="685.448780421163,456.285710478567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.6464187122712,-40.0571408063459"
+              Start="0,0"
+              End="20.1464187122712,-40.0571408063459">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="9.82320935613558,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.82320935613558,0"
+                    Point2="13.8232093561356,0"
+                    Point3="13.8232093561356,-4" />
+                  <mssgle:LineSegment
+                    End="13.8232093561356,-36.0571408063459" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.8232093561356,-36.0571408063459"
+                    Point2="13.8232093561356,-40.0571408063459"
+                    Point3="17.8232093561356,-40.0571408063459" />
+                  <mssgle:LineSegment
+                    End="20.1464187122712,-40.0571408063459" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Descriptions.Paths[Union All Output 1]"
+          TopLeft="560.476166409633,323.752379807309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.601177985972,-43.2857147738762"
+              Start="0,0"
+              End="101.101177985972,-43.2857147738762">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.3005889929861,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.3005889929861,0"
+                    Point2="54.3005889929861,0"
+                    Point3="54.3005889929861,-4" />
+                  <mssgle:LineSegment
+                    End="54.3005889929861,-39.2857147738762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.3005889929861,-39.2857147738762"
+                    Point2="54.3005889929861,-43.2857147738762"
+                    Point3="58.3005889929861,-43.2857147738762" />
+                  <mssgle:LineSegment
+                    End="101.101177985972,-43.2857147738762" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Descriptions.Paths[Row Count Output 11]"
+          TopLeft="515.628547036791,66.3619045897135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.0857107732979,40.1142851460548"
+              Start="0,0"
+              End="-77.0857107732979,32.6142851460548">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.0571425730274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.0571425730274"
+                    Point2="0,20.0571425730274"
+                    Point3="-4,20.0571425730274" />
+                  <mssgle:LineSegment
+                    End="-73.0857107732979,20.0571425730274" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.0857107732979,20.0571425730274"
+                    Point2="-77.0857107732979,20.0571425730274"
+                    Point3="-77.0857107732979,24.0571425730274" />
+                  <mssgle:LineSegment
+                    End="-77.0857107732979,32.6142851460548" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Descriptions.Paths[Row Count Output 1]"
+          TopLeft="851.495199133434,416.228569672221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106.272610596679,26.4571416741895"
+              Start="0,0"
+              End="106.272610596679,18.9571416741895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="102.272610596679,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="102.272610596679,0"
+                    Point2="106.272610596679,0"
+                    Point3="106.272610596679,4" />
+                  <mssgle:LineSegment
+                    End="106.272610596679,18.9571416741895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Descriptions.Paths[Output 0]"
           TopLeft="749.877344395606,301.266665033433">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2198,95 +2380,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Data Flow Task\Lookup"
-          TopLeft="382.142836263493,106.476189735768" />
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Data Flow Task\Row Count 1"
-          TopLeft="541.666637071306,146.09523707931" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="494.942836263493,127.276189735768">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46.7238008078132,39.6190473435418"
-              Start="0,0"
-              End="39.2238008078132,39.6190473435418">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="19.3619004039066,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.3619004039066,0"
-                    Point2="23.3619004039066,0"
-                    Point3="23.3619004039066,4" />
-                  <mssgle:LineSegment
-                    End="23.3619004039066,35.6190473435418" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.3619004039066,35.6190473435418"
-                    Point2="23.3619004039066,39.6190473435418"
-                    Point3="27.3619004039066,39.6190473435418" />
-                  <mssgle:LineSegment
-                    End="39.2238008078132,39.6190473435418" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-24.8294863148434,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Data Flow Task\Union All"
-          TopLeft="440.476166409633,302.952379807309" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Excel Source Error Output]"
-          TopLeft="326.999987160167,66.7333331585593">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="173.476179249466,236.21904664875"
-              Start="0,0"
-              End="173.476179249466,228.71904664875">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,92.0891037215255" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,92.0891037215255"
-                    Point2="0,96.0891037215255"
-                    Point3="4,96.0891037215255" />
-                  <mssgle:LineSegment
-                    End="169.476179249466,96.0891037215255" />
-                  <mssgle:CubicBezierSegment
-                    Point1="169.476179249466,96.0891037215255"
-                    Point2="173.476179249466,96.0891037215255"
-                    Point3="173.476179249466,100.089103721525" />
-                  <mssgle:LineSegment
-                    End="173.476179249466,228.71904664875" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="28.8867029059832,101.089103721525,115.7027734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
+          Id="Package\Import Descriptions.Paths[OLE DB Destination Error Output]"
           TopLeft="340.604752648895,279.438093439559">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2322,49 +2422,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="560.476166409633,323.752379807309">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="108.601177985972,-43.2857147738762"
-              Start="0,0"
-              End="101.101177985972,-43.2857147738762">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="50.3005889929861,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="50.3005889929861,0"
-                    Point2="54.3005889929861,0"
-                    Point3="54.3005889929861,-4" />
-                  <mssgle:LineSegment
-                    End="54.3005889929861,-39.2857147738762" />
-                  <mssgle:CubicBezierSegment
-                    Point1="54.3005889929861,-39.2857147738762"
-                    Point2="54.3005889929861,-43.2857147738762"
-                    Point3="58.3005889929861,-43.2857147738762" />
-                  <mssgle:LineSegment
-                    End="101.101177985972,-43.2857147738762" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Data Flow Task\Row Count 2"
-          TopLeft="713.095199133434,395.428569672221" />
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Data Flow Task\Row Count 3"
-          TopLeft="446.428547036791,24.7619045897135" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup No Match Output]"
+          Id="Package\Import Descriptions.Paths[Lookup No Match Output]"
           TopLeft="438.542836263493,148.076189735768">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2400,69 +2458,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="685.448780421163,456.285710478567">
+          Id="Package\Import Descriptions.Paths[Lookup Match Output]"
+          TopLeft="494.942836263493,127.276189735768">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="27.6464187122712,-40.0571408063459"
+              EndConnector="46.7238008078132,39.6190473435418"
               Start="0,0"
-              End="20.1464187122712,-40.0571408063459">
+              End="39.2238008078132,39.6190473435418">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="9.82320935613558,0" />
+                    End="19.3619004039066,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.82320935613558,0"
-                    Point2="13.8232093561356,0"
-                    Point3="13.8232093561356,-4" />
+                    Point1="19.3619004039066,0"
+                    Point2="23.3619004039066,0"
+                    Point3="23.3619004039066,4" />
                   <mssgle:LineSegment
-                    End="13.8232093561356,-36.0571408063459" />
+                    End="23.3619004039066,35.6190473435418" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.8232093561356,-36.0571408063459"
-                    Point2="13.8232093561356,-40.0571408063459"
-                    Point3="17.8232093561356,-40.0571408063459" />
+                    Point1="23.3619004039066,35.6190473435418"
+                    Point2="23.3619004039066,39.6190473435418"
+                    Point3="27.3619004039066,39.6190473435418" />
                   <mssgle:LineSegment
-                    End="20.1464187122712,-40.0571408063459" />
+                    End="39.2238008078132,39.6190473435418" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-24.8294863148434,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="851.495199133434,416.228569672221">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="106.272610596679,26.4571416741895"
-              Start="0,0"
-              End="106.272610596679,18.9571416741895">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="102.272610596679,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="102.272610596679,0"
-                    Point2="106.272610596679,0"
-                    Point3="106.272610596679,4" />
-                  <mssgle:LineSegment
-                    End="106.272610596679,18.9571416741895" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Excel Source Output]"
+          Id="Package\Import Descriptions.Paths[Excel Source Output]"
           TopLeft="374.999987160167,45.7476188741364">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2480,48 +2512,52 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Row Count Output 11]"
-          TopLeft="515.628547036791,66.3619045897135">
+          Id="Package\Import Descriptions.Paths[Excel Source Error Output]"
+          TopLeft="326.999987160167,66.7333331585593">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-77.0857107732979,40.1142851460548"
+              EndConnector="173.476179249466,236.21904664875"
               Start="0,0"
-              End="-77.0857107732979,32.6142851460548">
+              End="173.476179249466,228.71904664875">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.0571425730274" />
+                    End="0,92.0891037215255" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.0571425730274"
-                    Point2="0,20.0571425730274"
-                    Point3="-4,20.0571425730274" />
+                    Point1="0,92.0891037215255"
+                    Point2="0,96.0891037215255"
+                    Point3="4,96.0891037215255" />
                   <mssgle:LineSegment
-                    End="-73.0857107732979,20.0571425730274" />
+                    End="169.476179249466,96.0891037215255" />
                   <mssgle:CubicBezierSegment
-                    Point1="-73.0857107732979,20.0571425730274"
-                    Point2="-77.0857107732979,20.0571425730274"
-                    Point3="-77.0857107732979,24.0571425730274" />
+                    Point1="169.476179249466,96.0891037215255"
+                    Point2="173.476179249466,96.0891037215255"
+                    Point3="173.476179249466,100.089103721525" />
                   <mssgle:LineSegment
-                    End="-77.0857107732979,32.6142851460548" />
+                    End="173.476179249466,228.71904664875" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="28.8867029059832,101.089103721525,115.7027734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Excel Source">
+    design-time-name="Package\Import Descriptions\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2534,7 +2570,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Import Descriptions\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2547,7 +2583,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
+    design-time-name="Package\Import Descriptions\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2560,12 +2596,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Lookup">
+    design-time-name="Package\Import Descriptions\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2575,7 +2611,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
