@@ -148,11 +148,12 @@ BEGIN TRY
 		PackageName nvarchar(100),
 		TaskName nvarchar(100),
 		SheetFileName nvarchar(100),
-		AuditTime DATETIME2,
 		ExecutionStatus nvarchar(50),
 		RowsProcessed int,
 		RowsFailed int,
 		Destination nvarchar(100),
+		StartTime DATETIME2,
+		EndTime DATETIME2
     );
     PRINT 'Table [dbo].[AuditLog] created successfully';
 END TRY
@@ -168,7 +169,6 @@ BEGIN TRY
     CREATE TABLE [dbo].[ErrorLog] (
         ErrorID INT IDENTITY(1,1) PRIMARY KEY,
 		SheetFileName nvarchar(255),
-		--AuditID int FOREIGN KEY REFERENCES AuditLogs(AuditID),
 		ErrorCode int,
 		ErrorMsg nvarchar(1000),
 		ErrorTime DATETIME DEFAULT GETDATE()
