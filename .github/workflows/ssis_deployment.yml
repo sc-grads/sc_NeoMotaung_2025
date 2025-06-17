@@ -48,10 +48,9 @@ jobs:
             SELECT 'SUCCESS: Deployed to SSISDB' AS Result
         END TRY
         BEGIN CATCH
-            SELECT 
-                ERROR_NUMBER() AS ErrorCode,
-                ERROR_MESSAGE() AS ErrorMessage
-            THROW;
+              DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE()
+              RAISERROR(@ErrorMessage, 16, 1)
+              RETURN -100
         END CATCH
         "@ | Out-File -FilePath $sqlFile
 
