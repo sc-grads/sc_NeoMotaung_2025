@@ -12,7 +12,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Execute SSIS Package
-        shell: pwsh
         run: |
           $sqlFile = "create_job.sql"
           @"
