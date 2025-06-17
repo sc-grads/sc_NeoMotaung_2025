@@ -14,10 +14,26 @@ jobs:
         $ispac = Get-ChildItem -Path . -Recurse -Filter *.ispac | Select-Object -First 1
         echo "ispac_path=$($ispac.FullName)" >> $env:GITHUB_OUTPUT
         
-    - name: Deploy SSIS package
+    - name: Deploy using T-SQL
+      shell: pwsh
       run: |
-        dtutil /FILE "${{ steps.find-ispac.outputs.ispac_path }}" ^
-           /COPY SQL;"SSISDB\YourFolder\YourProject\${{ github.run_number }}" ^
-           /SERVER "${{ secrets.SQL_SERVER }}" ^
-           /QUIET
-      shell: cmd
+        $ispacBytes = [System.IO.File]::ReadAllBytes("${{ steps.find-ispac.outputs.ispac_path }}")
+        $ispacHex = [System.BitConverter]::ToString($ispacBytes).Replace("-","")
+        
+        $sqlQuery = @"
+        DECLARE @ProjectBinary VARBINARY(MAX) = 0x$ispacHex
+        DECLARE @OperationId BIGINT
+        
+        IF NOT EXISTS (SELECT 1 FROM [SSISDB].[catalog].[folders] WHERE name = 'YourFolder')
+        BEGIN
+            EXEC [SSISDB].[catalog].[create_folder] @folder_name = 'YourFolder'
+        END
+        
+        EXEC [SSISDB].[catalog].[deploy_project] 
+            @folder_name = 'YourFolder',
+            @project_name = 'YourProject',
+            @Project_Stream = @ProjectBinary,
+            @operation_id = @OperationId OUTPUT
+        "@
+        
+        sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P "${{ secrets.SQL_PASSWORD }}" -Q "$sqlQuery"
