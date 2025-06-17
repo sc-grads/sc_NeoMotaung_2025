@@ -9,6 +9,7 @@
 !**/*.sql
 !**/*.xlsx
 !**/*.dtsx
+!**/*.ispac
 
 !.gitignore
 
