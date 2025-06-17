@@ -24,7 +24,8 @@ jobs:
         ).Replace("-","")
 
         # SQL deployment script
-        $sqlFile = "deploy_ssis.sql" @"
+        $sqlFile = "deploy_ssis.sql" 
+        @"
         BEGIN TRY
             -- Create folder if missing
             IF NOT EXISTS (SELECT 1 FROM [SSISDB].[catalog].[folders] WHERE name = 'GitHub_Deployments')
