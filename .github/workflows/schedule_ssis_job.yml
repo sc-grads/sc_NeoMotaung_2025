@@ -1,0 +1,65 @@
+name: Schedule SSIS Package Execution
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Runs every minute
+  workflow_dispatch:
+
+jobs:
+  execute-ssis:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Execute SSIS Package
+        shell: pwsh
+        run: |
+          $sqlFile = "create_job.sql"
+          @"
+          USE [msdb]
+          GO
+
+          -- Create job if it doesn't exist
+          IF NOT EXISTS (SELECT 1 FROM sysjobs WHERE name = N'GitHub_SSIS_Every_Minute')
+          BEGIN
+              EXEC msdb.dbo.sp_add_job
+                  @job_name = N'GitHub_SSIS_Every_Minute',
+                  @enabled = 1,
+                  @description = N'SSIS package execution job created by GitHub Actions'
+              
+              -- Add job step (replace with your package path)
+              EXEC msdb.dbo.sp_add_jobstep
+                  @job_name = N'GitHub_SSIS_Every_Minute',
+                  @step_name = N'Execute SSIS Package',
+                  @subsystem = N'SSIS',
+                  @command = N'/ISSERVER "\"\SSISDB\GitHub_Deployments\SSISTimesheetsProject\MultiSheetIntegration.dtsx\"" /SERVER "\"$(SQL_SERVER)\"" /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /X86',
+                  @database_name = N'SSISDB'
+
+              -- Create schedule
+              EXEC msdb.dbo.sp_add_schedule
+                  @schedule_name = N'Every_Minute_Schedule',
+                  @freq_type = 4,  -- Daily
+                  @freq_interval = 1,
+                  @freq_subday_type = 4,  -- Minutes
+                  @freq_subday_interval = 1,
+                  @active_start_time = 000000  -- Midnight
+
+              -- Attach schedule to job
+              EXEC msdb.dbo.sp_attach_schedule
+                  @job_name = N'GitHub_SSIS_Every_Minute',
+                  @schedule_name = N'Every_Minute_Schedule'
+
+              -- Assign job to server
+              EXEC msdb.dbo.sp_add_jobserver
+                  @job_name = N'GitHub_SSIS_Every_Minute'
+          END
+          ELSE
+          BEGIN
+              PRINT 'Job already exists'
+          END
+
+          -- Execute the job immediately
+          EXEC msdb.dbo.sp_start_job N'GitHub_SSIS_Every_Minute'
+          "@ | Out-File -FilePath $sqlFile
+
+          sqlcmd -S "${{ secrets.SQL_SERVER }}" -E -Q "$sqlFile"
