@@ -50,7 +50,7 @@ jobs:
         BEGIN CATCH
               DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE()
               RAISERROR(@ErrorMessage, 16, 1)
-              RETURN -100
+              RETURN
         END CATCH
         "@ | Out-File -FilePath $sqlFile
 
