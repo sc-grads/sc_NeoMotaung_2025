@@ -16,7 +16,7 @@ jobs:
         
     
     - name: Deploy to SSISDB (Windows Auth)
-      shell: pwsh
+      #shell: pwsh
       run: |
         # Convert .ispac to hex
         $ispacHex = [System.BitConverter]::ToString(
