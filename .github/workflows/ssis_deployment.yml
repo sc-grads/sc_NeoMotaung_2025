@@ -16,7 +16,8 @@ jobs:
         
     - name: Deploy SSIS package
       run: |
-        dtutil /FILE "${{ steps.find-ispac.outputs.ispac_path }}" \
-               /COPY SQL;"SSISDB\YourFolder\YourProject\${{ github.run_number }}" \
-               /SERVER "${{ secrets.SQL_SERVER }}" \
-               /QUIET
+        dtutil /FILE "${{ steps.find-ispac.outputs.ispac_path }}" ^
+           /COPY SQL;"SSISDB\YourFolder\YourProject\${{ github.run_number }}" ^
+           /SERVER "${{ secrets.SQL_SERVER }}" ^
+           /QUIET
+      shell: cmd
