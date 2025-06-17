@@ -1,0 +1,8 @@
+name: Test Runner
+on: push
+jobs:
+  test:
+    runs-on: [self-hosted]  # Or your specific runner label
+    steps:
+      - name: Confirm working
+        run: echo "Success! Runner is alive at $(date)"
