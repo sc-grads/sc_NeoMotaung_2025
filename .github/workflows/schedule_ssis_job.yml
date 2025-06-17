@@ -31,7 +31,7 @@ jobs:
                   @job_name = N'GitHub_SSIS_Every_Minute',
                   @step_name = N'Execute SSIS Package',
                   @subsystem = N'SSIS',
-                  @command = N'/ISSERVER "\"\SSISDB\GitHub_Deployments\SSISTimesheetsProject\MultiSheetIntegration.dtsx\"" /SERVER "\"$(SQL_SERVER)\"" /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /X86',
+                  @command = N'/ISSERVER "\"\SSISDB\GitHub_Deployments\SSISTimesheetsProject\MultiSheetIntegration.dtsx\"" /SERVER "\"${{ secrets.SQL_SERVER }}\"" /Par "\"$ServerOption::SYNCHRONIZED(Boolean)\"";True /X86',
                   @database_name = N'SSISDB'
 
               -- Create schedule
