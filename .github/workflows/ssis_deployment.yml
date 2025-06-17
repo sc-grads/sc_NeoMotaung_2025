@@ -24,7 +24,7 @@ jobs:
         ).Replace("-","")
 
         # SQL deployment script
-        $sql = @"
+        $sqlFile = "deploy_ssis.sql" @"
         BEGIN TRY
             -- Create folder if missing
             IF NOT EXISTS (SELECT 1 FROM [SSISDB].[catalog].[folders] WHERE name = 'GitHub_Deployments')
@@ -52,8 +52,8 @@ jobs:
                 ERROR_MESSAGE() AS ErrorMessage
             THROW;
         END CATCH
-        "@
+        "@ | Out-File -FilePath $sqlFile
 
         # Execute with Windows Auth
-        sqlcmd -S "${{ secrets.SQL_SERVER }}" -E -Q "$sql"
+        sqlcmd -S "${{ secrets.SQL_SERVER }}" -E -i "$sqlFile"
         if ($LASTEXITCODE -ne 0) { exit 1 }
