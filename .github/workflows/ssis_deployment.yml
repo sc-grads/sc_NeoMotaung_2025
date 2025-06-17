@@ -35,5 +35,9 @@ jobs:
             @Project_Stream = @ProjectBinary,
             @operation_id = @OperationId OUTPUT
         "@
+
+        $server = "${{ secrets.SQL_SERVER }}"
+        $user = "Auto_user"
+        $pass = "${{ secrets.SQL_PASSWORD }}"
         
-        sqlcmd -S "${{ secrets.SQL_SERVER }}" -U Auto_user -P "${{ secrets.SQL_PASSWORD }}" -Q "$sqlQuery"
+        sqlcmd -S $server -U $user -P $pass -Q "$sqlQuery"
