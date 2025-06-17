@@ -41,7 +41,7 @@ jobs:
 
             EXEC [SSISDB].[catalog].[deploy_project]
                 @folder_name = 'GitHub_Deployments',
-                @project_name = '${{ github.event.repository.name }}',
+                @project_name = 'SSISTimesheetsProject',
                 @Project_Stream = @ProjectBinary,
                 @operation_id = @OperationId OUTPUT
 
