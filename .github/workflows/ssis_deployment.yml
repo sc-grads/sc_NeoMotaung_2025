@@ -1,0 +1,22 @@
+name: Deploy SSIS Package
+on: workflow_dispatch
+
+jobs:
+  deploy-ssis:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Find .ispac files
+      id: find-ispac
+      run: |
+        $ispac = Get-ChildItem -Path . -Recurse -Filter *.ispac | Select-Object -First 1
+        echo "ispac_path=$($ispac.FullName)" >> $env:GITHUB_OUTPUT
+        
+    - name: Deploy SSIS package
+      run: |
+        dtutil /FILE "${{ steps.find-ispac.outputs.ispac_path }}" \
+               /COPY SQL;"SSISDB\YourFolder\YourProject\${{ github.run_number }}" \
+               /SERVER "${{ secrets.SQL_SERVER }}" \
+               /QUIET
