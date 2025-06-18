@@ -58,4 +58,4 @@ jobs:
           EXEC msdb.dbo.sp_start_job N'GitHub_SSIS_Every_Minute'
           "@ | Out-File -FilePath $sqlFile
 
-          sqlcmd -S "${{ secrets.SQL_SERVER }}" -E -i "$sqlFile"
+          sqlcmd -S "${{ secrets.TUNNEL_SQL_SERVER }}" -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i "$sqlFile"
