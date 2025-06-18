@@ -6,8 +6,9 @@ jobs:
   deploy_ssis_packages:
     needs: create_db
     uses: ./.github/workflows/ssis_deployment.yml
-    secrets:
-     sql_server: ${{ secrets.SQL_SERVER }}
+    with:
+      sql_server: ${{ secrets.SQL_SERVER }}
+    secrets: inherit
   create_agent_job:
     needs: deploy_ssis_packages
     uses: ./.github/workflows/schedule_ssis_job.yml
