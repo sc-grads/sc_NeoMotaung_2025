@@ -1,0 +1,61 @@
+name: Deploy SSIS Package
+on: workflow_dispatch
+
+jobs:
+  deploy-ssis:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Find .ispac files
+      id: find-ispac
+      run: |
+        $ispac = Get-ChildItem -Path . -Recurse -Filter *.ispac | Select-Object -First 1
+        echo "ispac_path=$($ispac.FullName)" >> $env:GITHUB_OUTPUT
+        
+    
+    - name: Deploy to SSISDB (Windows Auth)
+      #shell: pwsh
+      #env:
+      #    SQL_SERVER: ${{ secrets.sql_server }}
+      run: |
+        # Convert .ispac to hex
+        $ispacHex = [System.BitConverter]::ToString(
+          [System.IO.File]::ReadAllBytes("${{ steps.find-ispac.outputs.ispac_path }}")
+        ).Replace("-","")
+
+        # SQL deployment script
+        $sqlFile = "deploy_ssis.sql" 
+        @"
+        BEGIN TRY
+            -- Create folder if missing
+            IF NOT EXISTS (SELECT 1 FROM [SSISDB].[catalog].[folders] WHERE name = 'GitHub_Deployments')
+            BEGIN
+                EXEC [SSISDB].[catalog].[create_folder] 
+                    @folder_name = 'GitHub_Deployments',
+                    @folder_id = NULL
+            END
+
+            -- Deploy project
+            DECLARE @ProjectBinary VARBINARY(MAX) = 0x$($ispacHex)
+            DECLARE @OperationId BIGINT
+
+            EXEC [SSISDB].[catalog].[deploy_project]
+                @folder_name = 'GitHub_Deployments',
+                @project_name = 'SSISTimesheetsProject',
+                @Project_Stream = @ProjectBinary,
+                @operation_id = @OperationId OUTPUT
+
+            SELECT 'SUCCESS: Deployed to SSISDB' AS Result
+        END TRY
+        BEGIN CATCH
+              DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE()
+              RAISERROR(@ErrorMessage, 16, 1)
+              RETURN
+        END CATCH
+        "@ | Out-File -FilePath $sqlFile
+
+        # Execute with Windows Auth
+        sqlcmd -S "${{ secrets.SQL_SERVER }}" -E -i "$sqlFile"
+        if ($LASTEXITCODE -ne 0) { exit 1 }
