@@ -1,8 +1,5 @@
 name: Schedule SSIS Package Execution
-on:
-  schedule:
-    - cron: '*/1 * * * *'  # Runs every minute
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   execute-ssis:
