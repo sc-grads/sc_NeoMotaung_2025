@@ -22,5 +22,5 @@ jobs:
           sqlcmd -?
       - name: Run SQL Script
         run: |
-         /opt/mssql-tools/bin/sqlcmd -S ${{ secrets.SQL_SERVER }} -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i HandsOnProject/TimesheetsProject/SQLScripts/dbCreation.sql || echo 'sqlcmd failed'
+         /opt/mssql-tools/bin/sqlcmd -S ${{ secrets.TUNNEL_SQL_SERVER }} -U Auto_user -P ${{ secrets.SQL_PASSWORD }} -i HandsOnProject/TimesheetsProject/SQLScripts/dbCreation.sql || echo 'sqlcmd failed'
           
