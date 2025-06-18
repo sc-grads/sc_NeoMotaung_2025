@@ -1,0 +1,11 @@
+name: SQL Workflow for Timesheet Project
+on: workflow_dispatch
+jobs:
+  create_db:
+    uses: ./.github/workflows/setup_timesheet_db.yml
+  deploy_ssis_packages:
+    needs: create_db
+    uses: ./.github/workflows/ssis_deployment.yml
+  create_agent_job:
+    needs: deploy_ssis_packages
+    uses: ./.github/workflows/schedule_ssis_job.yml
