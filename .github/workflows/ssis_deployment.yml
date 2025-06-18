@@ -1,8 +1,7 @@
 name: Deploy SSIS Package
 on: 
   workflow_call:
-    inputs:
-      secrets:
+    secrets:
       sql_server:
         description: 'SQL Server url'
         required: true
