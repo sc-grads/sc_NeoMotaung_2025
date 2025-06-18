@@ -1,10 +1,10 @@
 name: Deploy SSIS Package
 on: 
   workflow_call:
-    secrets:
+    inputs:
       sql_server:
-        description: 'SQL Server url'
         required: true
+        type: string
 
 jobs:
   deploy-ssis:
@@ -22,8 +22,8 @@ jobs:
     
     - name: Deploy to SSISDB (Windows Auth)
       #shell: pwsh
-      env:
-          SQL_SERVER: ${{ secrets.sql_server }}
+      #env:
+      #    SQL_SERVER: ${{ secrets.sql_server }}
       run: |
         # Convert .ispac to hex
         $ispacHex = [System.BitConverter]::ToString(
@@ -62,5 +62,5 @@ jobs:
         "@ | Out-File -FilePath $sqlFile
 
         # Execute with Windows Auth
-        sqlcmd -S ${SQL_SERVER} -E -i "$sqlFile"
+        sqlcmd -S "${{ inputs.sql_server }}" -E -i "$sqlFile"
         if ($LASTEXITCODE -ne 0) { exit 1 }
