@@ -1,0 +1,6 @@
+name: SQL Workflow for Timesheet Project
+on: workflow_dispatch
+jobs:
+  test_call:
+    uses: ./.github/workflows/deploy_test.yml
+  
