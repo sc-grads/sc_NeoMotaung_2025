@@ -1,5 +1,5 @@
 name: Set up DB
-on: workflow_dispatch
+on: workflow_call
 jobs:
   set_db:
     runs-on: ubuntu-latest
