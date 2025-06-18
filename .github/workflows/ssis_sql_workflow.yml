@@ -3,6 +3,7 @@ on: workflow_dispatch
 jobs:
   create_db:
     uses: ./.github/workflows/setup_timesheet_db.yml
+    secrets: inherit
   deploy_ssis_packages:
     needs: create_db
     uses: ./.github/workflows/ssis_deployment.yml
