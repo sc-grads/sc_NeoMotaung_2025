@@ -10,3 +10,4 @@ jobs:
   create_agent_job:
     needs: deploy_ssis_packages
     uses: ./.github/workflows/schedule_ssis_job.yml
+    secrets: inherit
