@@ -28,7 +28,7 @@ jobs:
                   @job_name = N'GitHub_SSIS_Every_Minute',
                   @step_name = N'Execute SSIS Package',
                   @subsystem = N'SSIS',
-                  @command = N'/ISSERVER "\"\SSISDB\Github_Deployments\SSISTimesheetsProject\MultiSheetIntegration.dtsx\"" /SERVER "\"${{ secrets.SQL_SERVER }}\"" /CHECKPOINTING OFF /REPORTING E,
+                  @command = N'/ISSERVER "\"\SSISDB\Github_Deployments\SSISTimesheetsProject\MultiSheetIntegration.dtsx\"" /SERVER "\"${{ secrets.SQL_SERVER }}\"" /CHECKPOINTING OFF /REPORTING E',
                   @database_name = N'SSISDB'
 
               -- Create schedule
