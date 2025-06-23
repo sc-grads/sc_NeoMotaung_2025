@@ -29,7 +29,7 @@ DROP TABLE Description
 DROP TABLE Client
 DROP TABLE WorkbookFile
 DROP TABLE ErrorLog
-DROP TABLE AuditLog
+DROP TABLE AuditLogs
 
 --TABLE EMPLOYEE CREATION
 
@@ -143,19 +143,21 @@ GO
 --TABLE AUDIT LOGS
 
 BEGIN TRY
-    CREATE TABLE [dbo].[AuditLog] (
-        AuditID INT IDENTITY(1,1) PRIMARY KEY,
+	CREATE TABLE AuditLogs
+		(
+		LogID  INT IDENTITY(1,1) PRIMARY KEY,
+		EventType nvarchar(100),
+		FileName nvarchar(100),
 		PackageName nvarchar(100),
 		TaskName nvarchar(100),
-		EmployeeName nvarchar(100), 
-		TimsheetMonth nvarchar(15),
-		ExecutionStatus nvarchar(50),
+		DestinationTable nvarchar(50),
+		ActionType nvarchar(50),
+		RowsInitialized int,
 		RowsProcessed int,
-		RowsFailed int,
-		Destination nvarchar(100),
-		StartTime DATETIME2,
-		EndTime DATETIME2
-    );
+		Machine nvarchar(255),
+		UserName nvarchar(100),
+		LogTime datetime2(7),
+		)
     PRINT 'Table [dbo].[AuditLog] created successfully';
 END TRY
 BEGIN CATCH
