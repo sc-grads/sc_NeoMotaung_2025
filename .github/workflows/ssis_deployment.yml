@@ -39,7 +39,7 @@ jobs:
 
             EXEC [SSISDB].[catalog].[deploy_project]
                 @folder_name = 'GitHub_Deployments',
-                @project_name = 'SSISTimesheetsProject',
+                @project_name = 'TimeTablesProject2',
                 @Project_Stream = @ProjectBinary,
                 @operation_id = @OperationId OUTPUT
 
