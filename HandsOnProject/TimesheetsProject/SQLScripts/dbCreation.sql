@@ -22,14 +22,17 @@ BEGIN CATCH
 END CATCH;
 GO
 
-DROP TABLE Timesheet
-DROP TABLE Leave
-DROP TABLE Employee
-DROP TABLE Description
-DROP TABLE Client
-DROP TABLE WorkbookFile
-DROP TABLE ErrorLog
-DROP TABLE AuditLogs
+DROP TABLE if exists StagingLeave
+DROP TABLE if exists StagingTimesheet
+DROP TABLE if exists StagingMasters
+DROP TABLE if exists Timesheet
+DROP TABLE if exists Leave
+DROP TABLE if exists Employee
+DROP TABLE if exists Description
+DROP TABLE if exists Client
+DROP TABLE if exists WorkbookFile
+DROP TABLE if exists ErrorLog
+DROP TABLE if exists AuditLogs
 
 --TABLE EMPLOYEE CREATION
 
@@ -91,6 +94,59 @@ BEGIN CATCH
 END CATCH;
 GO
 
+BEGIN TRY
+    CREATE TABLE StagingTimesheet (
+        StageTimesheetID INT IDENTITY(1,1) PRIMARY KEY,
+        SlotDate nvarchar(255),
+		DayOfTheWeek nvarchar(255),
+		Client nvarchar(255),
+		Project nvarchar(255),
+		Description nvarchar(255),
+		BillOrNonBill nvarchar(255),
+		Comments nvarchar(1000),
+		TotalHours nvarchar(255),
+		StartTime nvarchar(255),
+		EndTime nvarchar(255)
+    );
+    PRINT 'Table [dbo].[StagingTimesheet] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
+BEGIN TRY
+    CREATE TABLE [dbo].[StagingLeave] (
+        StagingLeaveID INT IDENTITY(1,1) PRIMARY KEY,
+		TypeOfLeave nvarchar(255),
+		StartDate nvarchar(255),
+		EndDate nvarchar(255),
+		NumberOfDays nvarchar(255),
+    );
+    PRINT 'Table [dbo].[StagingLeave] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
+BEGIN TRY
+    CREATE TABLE [dbo].[StagingMasters] (
+        StagingMasterID INT IDENTITY(1,1) PRIMARY KEY,
+		ClientName nvarchar(255),
+		DescriptionType nvarchar(255),
+		EmployeeName nvarchar(255),
+    );
+    PRINT 'Table [dbo].[StagingMasters] created successfully';
+END TRY
+BEGIN CATCH
+    PRINT 'Error creating table: ' + ERROR_MESSAGE();
+    THROW;
+END CATCH;
+GO
+
 --LEAVE TABLE CREATION
 
 BEGIN TRY
@@ -137,9 +193,6 @@ END CATCH;
 GO
 
 
-
-
-
 --TABLE AUDIT LOGS
 
 BEGIN TRY
@@ -152,13 +205,12 @@ BEGIN TRY
 		TaskName nvarchar(100),
 		DestinationTable nvarchar(50),
 		ActionType nvarchar(50),
-		RowsInitialized int,
 		RowsProcessed int,
 		Machine nvarchar(255),
 		UserName nvarchar(100),
 		LogTime datetime2(7),
 		)
-    PRINT 'Table [dbo].[AuditLog] created successfully';
+    PRINT 'Table [dbo].[AuditLogs] created successfully';
 END TRY
 BEGIN CATCH
     PRINT 'Error creating table: ' + ERROR_MESSAGE();
@@ -172,6 +224,7 @@ BEGIN TRY
     CREATE TABLE [dbo].[ErrorLog] (
         ErrorID INT IDENTITY(1,1) PRIMARY KEY,
 		SheetFileName nvarchar(255),
+		TaskName nvarchar(50),
 		ErrorCode int,
 		ErrorMsg nvarchar(1000),
 		ErrorTime DATETIME DEFAULT GETDATE()
