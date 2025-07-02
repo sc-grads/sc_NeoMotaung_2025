@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 
 import os
 
@@ -18,6 +19,7 @@ from resources.users import blp as UserBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)
+    load_dotenv()
 
     #propagate exception from extension of flask to the main app
     app.config["PROPAGATE_EXCEPTION"] = True
