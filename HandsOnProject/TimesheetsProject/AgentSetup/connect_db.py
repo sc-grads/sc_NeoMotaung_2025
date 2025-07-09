@@ -7,7 +7,7 @@ import json
 conn_str = (
     "DRIVER={SQL Server};"
     "SERVER=localhost;"
-    "DATABASE=AdventureWorks2022;"
+    "DATABASE=TimesheetDB;"
     "Trusted_Connection=yes"
 )
 
@@ -22,7 +22,7 @@ print(df)
 
 cursor.close()"""
 
-def query_llama(prompt, model="mistral3.2"):
+def query_llama(prompt, model="mistral"):
     url = "http://localhost:11434/api/generate"
     payload = {
         "model": model,
@@ -41,40 +41,34 @@ def query_llama(prompt, model="mistral3.2"):
 
 def format_response(question, result):
     prompt = f"""
-    You are an AI assistant answering questions about the AdventureWorks2022 database. Convert the following database query result into a natural language response for the question: '{question}'
+    You are an AI assistant answering questions about the TimesheetDB database. Convert the following database query result into a natural language response for the question: '{question}'
     
     Result: {result}
     
-    Examples:
-    Question: How many employees are in the Sales department?
-    Result: [(18,)]
-    Response: There are 18 employees in the Sales department.
-    
-    Question: Which sales territory sold the most?
-    Result: [('Southwest', 1234567.89)]
-    Response: The Southwest territory sold the most with $1,234,567.89 in sales.
     
     Now, provide the response for: {question}
     Result: {result}
     """
     return query_llama(prompt)
 
+"""Examples:
+    Question: How many employees are in the Sales department?
+    Result: [(18,)]
+    Response: There are 18 employees in the Sales department.
+    
+    Question: Which sales territory sold the most?
+    Result: [('Southwest', 1234567.89)]
+    Response: The Southwest territory sold the most with $1,234,567.89 in sales."""
 
-def generate_sql(question):
-    prompt = f"""
-    You are a SQL expert for the AdventureWorks2019 database on Microsoft SQL Server. Convert the following question into a valid SQL query. Return only the SQL query, no explanations.
-    
-    Question: {question}
-    
-    Relevant Schema:
+"""    Relevant Schema:
     - HumanResources.Employee (BusinessEntityID, JobTitle, HireDate)
     - HumanResources.Department (DepartmentID, Name)
     - HumanResources.EmployeeDepartmentHistory (BusinessEntityID, DepartmentID, EndDate)
     - Sales.SalesOrderHeader (SalesOrderID, TerritoryID, CustomerID)
     - Sales.SalesOrderDetail (SalesOrderID, LineTotal)
-    - Sales.SalesTerritory (TerritoryID, Name)
-    
-    Example Questions and Queries:
+    - Sales.SalesTerritory (TerritoryID, Name)"""
+
+"""Example Questions and Queries:
     1. Question: How many employees are in the Sales department?
        Query: SELECT COUNT(*) FROM HumanResources.Employee e
               JOIN HumanResources.EmployeeDepartmentHistory edh ON e.BusinessEntityID = edh.BusinessEntityID
@@ -86,7 +80,25 @@ def generate_sql(question):
               JOIN Sales.SalesOrderDetail sod ON soh.SalesOrderID = sod.SalesOrderID
               JOIN Sales.SalesTerritory st ON soh.TerritoryID = st.TerritoryID
               GROUP BY st.Name
-              ORDER BY TotalSales DESC
+              ORDER BY TotalSales DESC"""
+
+
+def generate_sql(question):
+    prompt = f"""
+    You are a SQL expert for the TimesheetDB database on Microsoft SQL Server. Convert the following question into a valid SQL query. Return only the SQL query, no explanations.
+    
+     Relevant Schema for TimesheetDB:
+    - Timesheet (TimesheetID, EmployeeID, EntryDate, DayOfTheWeek, ClientID, Project, DescriptionID, BillOrNonBill, Comments, TotalHours, StartTime, EndTime)
+    - Leave (LeaveID, WorkbookFileID, EmployeeID, TypeOfLeave, StartDate, EndDate, NumberOfDays)
+    - WorkbookFile (WorkbookFileID, NameOfFile)
+    - Employee (EmployeeID, EmployeeName)
+    - Description (DescriptionID, DescText)
+    - Client (ClientID, ClientName)
+    - AuditLogs (LogID, EventType, FileName, PackageName, TaskName, DestinationTable, ActionType, RowsProcessed, Machine, UserName, LogTime)
+    - ErrorLog (ErrorID, SheetFileName, TaskName, ErrorCode, ErrorMsg, ErrorTime)
+    
+    Question: {question}
+    
     
     Now, provide the SQL query for: {question}
     """
@@ -108,7 +120,7 @@ def execute_query(question):
 
 #Chat UI
 while True:
-    question = input("Ask a question about AdventureWorks (or type 'exit'): ")
+    question = input("Ask a question about Timesheet (or type 'exit'): ")
     if question.lower() == "exit":
         break
     answer = execute_query(question)
