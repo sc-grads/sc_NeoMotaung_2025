@@ -62,7 +62,7 @@ def format_response(question, result):
 
 def generate_sql(question):
     prompt = f"""
-    You are a SQL expert for the AdventureWorks2019 database on Microsoft SQL Server. Convert the following question into a valid SQL query. Return the SQL query but use natural language with a friendly tone.
+    You are a SQL expert for the AdventureWorks2019 database on Microsoft SQL Server. Convert the following question into a valid SQL query. Return only the SQL query, no explanations.
     
     Question: {question}
     
@@ -88,7 +88,7 @@ def generate_sql(question):
               GROUP BY st.Name
               ORDER BY TotalSales DESC
     
-    Now, provide the response for: {question}
+    Now, provide the SQL query for: {question}
     """
     return query_llama(prompt)
 
@@ -102,6 +102,7 @@ def execute_query(question):
         return format_response(question, result)
     except Exception as e:
         return f"Error: {str(e)}"
+        #return f"query: {sql_query}"
     finally:
         cursor.close()
 
