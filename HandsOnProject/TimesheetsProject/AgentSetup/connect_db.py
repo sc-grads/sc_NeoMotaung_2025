@@ -22,7 +22,7 @@ print(df)
 
 cursor.close()"""
 
-def query_llama(prompt, model="llama3.2"):
+def query_llama(prompt, model="mistral3.2"):
     url = "http://localhost:11434/api/generate"
     payload = {
         "model": model,
@@ -101,8 +101,8 @@ def execute_query(question):
         result = cursor.fetchall()
         return format_response(question, result)
     except Exception as e:
-        return f"Error: {str(e)}"
-        #return f"query: {sql_query}"
+        #return f"Error: {str(e)}"
+        return f"query: {sql_query}"
     finally:
         cursor.close()
 
