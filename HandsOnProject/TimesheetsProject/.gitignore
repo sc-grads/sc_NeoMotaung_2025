@@ -10,6 +10,7 @@
 !**/*.xlsx
 !**/*.dtsx
 !**/*.ispac
+!**/*.py
 
 !.gitignore
 
