@@ -22,7 +22,7 @@ print(df)
 
 cursor.close()"""
 
-def query_llama(prompt, model="mistral"):
+def query_llama(prompt, model="llama"):
     url = "http://localhost:11434/api/generate"
     payload = {
         "model": model,
@@ -87,15 +87,22 @@ def generate_sql(question):
     prompt = f"""
     You are a SQL expert for the TimesheetDB database on Microsoft SQL Server. Convert the following question into a valid SQL query. Return only the SQL query, no explanations.
     
-     Relevant Schema for TimesheetDB:
-    - Timesheet (TimesheetID, EmployeeID, EntryDate, DayOfTheWeek, ClientID, Project, DescriptionID, BillOrNonBill, Comments, TotalHours, StartTime, EndTime)
-    - Leave (LeaveID, WorkbookFileID, EmployeeID, TypeOfLeave, StartDate, EndDate, NumberOfDays)
-    - WorkbookFile (WorkbookFileID, NameOfFile)
-    - Employee (EmployeeID, EmployeeName)
-    - Description (DescriptionID, DescText)
-    - Client (ClientID, ClientName)
-    - AuditLogs (LogID, EventType, FileName, PackageName, TaskName, DestinationTable, ActionType, RowsProcessed, Machine, UserName, LogTime)
-    - ErrorLog (ErrorID, SheetFileName, TaskName, ErrorCode, ErrorMsg, ErrorTime)
+    Relevant Schema for TimesheetDB:
+    - Timesheet (TimesheetID (Primary Key), EmployeeID (Foreign Key, connects to the Employee table), EntryDate, DayOfTheWeek, ClientID (Foreign Key, connects to the Client table), Project, DescriptionID (Foreign Key, connects to the Description table), BillOrNonBill, Comments, TotalHours, StartTime, EndTime)
+    - Leave (LeaveID (Primary Key, used as a foreign key in the Timesheet Table), WorkbookFileID (Foreign Key, connects to the WorkbookFile table), EmployeeID (Foreign Key, connects to the Employee table), TypeOfLeave, StartDate, EndDate, NumberOfDays)
+    - WorkbookFile (WorkbookFileID (Primary Key, used as a foreign key in the Leave Table), NameOfFile)
+    - Employee (EmployeeID (Primary Key, used as a foreign key in the Timesheet Table and Leave Table), EmployeeName)
+    - Description (DescriptionID (Primary Key, used as a foreign key in the Timesheet Table), DescText)
+    - Client (ClientID (Primary Key, used as a foreign key in the Timesheet Table), ClientName)
+    - AuditLogs (LogID (Primary Key), EventType, FileName, PackageName, TaskName, DestinationTable, ActionType, RowsProcessed, Machine, UserName, LogTime)
+    - ErrorLog (ErrorID (Primary Key), SheetFileName, TaskName, ErrorCode, ErrorMsg, ErrorTime)
+
+    Do not make any DML queries such as DELETE, UPDATE, MODIFY or INSERT.
+    Try to consider any relationships and connections between tables particularly the Timesheet, Leave, Client, Description and Employee tables as your queries may require joins. Have a deep understanding of the schema provided for you.
+
+    Note that the date column for Timesheet is in the dd/mm/yyyy format, so if a question involves a date like "What did Neo do on the 14th of April at 8:00 am" or "What did Neo do on April 14", be aware that it correlates to 14/04/2025.
+    If asked what was done during a particular day or timeslot, just inspect the comment column to get information about the employee's activities.
+
     
     Question: {question}
     
