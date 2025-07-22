@@ -22,7 +22,7 @@ print(df)
 
 cursor.close()"""
 
-def query_llama(prompt, model="llama"):
+def query_llama(prompt, model="llama3"):
     url = "http://localhost:11434/api/generate"
     payload = {
         "model": model,
@@ -85,10 +85,10 @@ def format_response(question, result):
 
 def generate_sql(question):
     prompt = f"""
-    You are a SQL expert for the TimesheetDB database on Microsoft SQL Server. Convert the following question into a valid SQL query. Return only the SQL query, no explanations.
+    You are an experienced Relational Database Administrator with a very high level of skill with SQL. You are now working with the TimesheetDB database on Microsoft SQL Server. You must be able to take a query or question in natural language, understand what is being asked and create a SQL query that can accurately answer the question you have received. Return only the SQL query, no explanations.
     
-    Relevant Schema for TimesheetDB:
-    - Timesheet (TimesheetID (Primary Key), EmployeeID (Foreign Key, connects to the Employee table), EntryDate, DayOfTheWeek, ClientID (Foreign Key, connects to the Client table), Project, DescriptionID (Foreign Key, connects to the Description table), BillOrNonBill, Comments, TotalHours, StartTime, EndTime)
+    The Schema for TimesheetDB:
+    - Timesheet (TimesheetID (Primary Key), EmployeeID (Foreign Key, connects to the Employee table), EntryDate, DayOfTheWeek, ClientID (Foreign Key, connects to the Client table), Project, DescriptionID (Foreign Key, connects to the Description table), BillOrNonBill, Comments (A detailed explanation of what was done for that entry), TotalHours, StartTime, EndTime)
     - Leave (LeaveID (Primary Key, used as a foreign key in the Timesheet Table), WorkbookFileID (Foreign Key, connects to the WorkbookFile table), EmployeeID (Foreign Key, connects to the Employee table), TypeOfLeave, StartDate, EndDate, NumberOfDays)
     - WorkbookFile (WorkbookFileID (Primary Key, used as a foreign key in the Leave Table), NameOfFile)
     - Employee (EmployeeID (Primary Key, used as a foreign key in the Timesheet Table and Leave Table), EmployeeName)
@@ -100,7 +100,7 @@ def generate_sql(question):
     Do not make any DML queries such as DELETE, UPDATE, MODIFY or INSERT.
     Try to consider any relationships and connections between tables particularly the Timesheet, Leave, Client, Description and Employee tables as your queries may require joins. Have a deep understanding of the schema provided for you.
 
-    Note that the date column for Timesheet is in the dd/mm/yyyy format, so if a question involves a date like "What did Neo do on the 14th of April at 8:00 am" or "What did Neo do on April 14", be aware that it correlates to 14/04/2025.
+    Note that the date column for Timesheet is in the dd/mm/yyyy format, so if a question involves a date like 'What did Neo do on the 14th of April at 8:00 am' or 'What did Neo do on April 14', be aware that it correlates to 2025-04-14 for example.
     If asked what was done during a particular day or timeslot, just inspect the comment column to get information about the employee's activities.
 
     
@@ -121,7 +121,7 @@ def execute_query(question):
         return format_response(question, result)
     except Exception as e:
         #return f"Error: {str(e)}"
-        return f"query: {sql_query}"
+        return f"Error: {str(e)}\nquery: {sql_query}"
     finally:
         cursor.close()
 
