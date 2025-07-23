@@ -100,7 +100,7 @@ def generate_sql(question):
     Do not make any DML queries such as DELETE, UPDATE, MODIFY or INSERT.
     Try to consider any relationships and connections between tables particularly the Timesheet, Leave, Client, Description and Employee tables as your queries may require joins. Have a deep understanding of the schema provided for you.
 
-    Note that the date column for Timesheet is in the dd/mm/yyyy format, so if a question involves a date like 'What did Neo do on the 14th of April at 8:00 am' or 'What did Neo do on April 14', be aware that it correlates to 2025-04-14 for example.
+    Note that the date column for Timesheet is in the yyyy-mm-dd format, so if a question involves a date like 'What did Neo do on the 14th of April at 8:00 am' or 'What did Neo do on April 14', be aware that it correlates to 2025-04-14 for example.
     If asked what was done during a particular day or timeslot, just inspect the comment column to get information about the employee's activities.
 
     
