@@ -85,10 +85,10 @@ def format_response(question, result):
 
 def generate_sql(question):
     prompt = f"""
-    You are an experienced Relational Database Administrator with a very high level of skill with SQL. You are now working with the TimesheetDB database on Microsoft SQL Server. You must be able to take a query or question in natural language, understand what is being asked and create a SQL query that can accurately answer the question you have received. Return only the SQL query, no explanations.
+    You are an experienced Relational Database Administrator with a very high level of skill with SQL. You are now working with the TimesheetDB database on Microsoft SQL Server. You must be able to take a query or question in natural language, understand what is being asked and create a SQL query that can accurately answer the question you have received. Make sure to remember syntax rules and avoid errors, keep in mind of any parenthesis. Return only the SQL query, no explanations or any other text, just the query alone.
     
     The Schema for TimesheetDB:
-    - Timesheet (TimesheetID (Primary Key), EmployeeID (Foreign Key, connects to the Employee table), EntryDate, DayOfTheWeek, ClientID (Foreign Key, connects to the Client table), Project, DescriptionID (Foreign Key, connects to the Description table), BillOrNonBill, Comments (A detailed explanation of what was done for that entry), TotalHours, StartTime, EndTime)
+    - Timesheet (TimesheetID (Primary Key), EmployeeID (Foreign Key, connects to the Employee table), EntryDate (Format: yyyy-mm-dd), DayOfTheWeek, ClientID (Foreign Key, connects to the Client table), Project, DescriptionID (Foreign Key, connects to the Description table), BillOrNonBill, Comments (A detailed explanation of what was done for that entry), TotalHours, StartTime, EndTime)
     - Leave (LeaveID (Primary Key, used as a foreign key in the Timesheet Table), WorkbookFileID (Foreign Key, connects to the WorkbookFile table), EmployeeID (Foreign Key, connects to the Employee table), TypeOfLeave, StartDate, EndDate, NumberOfDays)
     - WorkbookFile (WorkbookFileID (Primary Key, used as a foreign key in the Leave Table), NameOfFile)
     - Employee (EmployeeID (Primary Key, used as a foreign key in the Timesheet Table and Leave Table), EmployeeName)
