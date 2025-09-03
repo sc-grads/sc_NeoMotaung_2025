@@ -11,31 +11,26 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            Box<string> nocSTR = new Box<string>("Initial String");
-
+           // Box<string> nocSTR = new Box<string>("Initial String");
+           Box<int, string> nocINTSTR = new Box<int, string>(1, "One");
+           nocINTSTR.Display();
         }
     }
 
-    class Box<T>
+    class Box<TFirst, TSecond>
     {
-        private T content;
+        public TFirst First { get; set; }
+        public TSecond Second { get; set; }
 
-        public Box(T initialValue)
+        public Box(TFirst first, TSecond second)
         {
-            content = initialValue;
-
-
+            First = first;
+            Second = second;
         }
 
-        public void updateContent(T newValue)
+        public void Display()
         {
-            content = newValue;
-            Console.WriteLine("Updated content to {0}", content);
-        }
-
-        public T GetContent()
-        {
-            return content;
+            Console.WriteLine($"First: {First}, Second: {Second}");
         }
     }
 }
