@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,21 +11,31 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            Box<int> intBox = new Box<int>();
-            intBox.Content = 123;
+            Box<string> nocSTR = new Box<string>("Initial String");
 
-            Box<string> strBox = new Box<string>();
-            strBox.Content = "Hello Generics";
         }
     }
 
     class Box<T>
     {
-        public T Content { get; set; }
+        private T content;
 
-        public string Log()
+        public Box(T initialValue)
         {
-            return $"Box contains: {Content}";
+            content = initialValue;
+
+
+        }
+
+        public void updateContent(T newValue)
+        {
+            content = newValue;
+            Console.WriteLine("Updated content to {0}", content);
+        }
+
+        public T GetContent()
+        {
+            return content;
         }
     }
 }
