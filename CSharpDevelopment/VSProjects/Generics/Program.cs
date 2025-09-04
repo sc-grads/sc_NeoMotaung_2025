@@ -12,40 +12,21 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-           
-
+            //You can use system reflections to get the type of a generic class or any other container
+            Type type = typeof(ConfigurationManager<>);
             
         }
     }
 
-   
-
-    //Generic interfaces allows flexibility with the contract defined by interfaces.
-
-
-    internal interface IRepository<T> 
+    internal class ConfigurationManager<T>
     {
-        //Keep param name for generic interface broad
-        void Add (T item);
-
-        void Remove (T item);
-    }
-
-    internal class Product
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
-
-    //Generic classes and interfaces.
-    internal class Repo<T> : IRepository<T>
-    {
-        public void Add(T entity)
+        public T LoadedConfiguration { get; private set; }
+        public ConfigurationManager(T config)
         {
-
+            LoadedConfiguration = config;
         }
 
-        public void Remove(T entity)
+        public static void SaveConfig(T configToSave)
         {
 
         }
