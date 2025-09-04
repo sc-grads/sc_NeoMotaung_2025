@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Generics
 {
@@ -12,23 +13,20 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            //You can use system reflections to get the type of a generic class or any other container
-            Type type = typeof(ConfigurationManager<>);
-            
+            //Action has no return value
+            //This action has no parameters
+            //Acts like a method where it executes code in the braces
+            Action action = () => { Console.WriteLine("Hello, World!"); };
+            action();
+
+            Action<int> numPrint = (x) => { Console.WriteLine(x); };
+            numPrint(100);
+
+            //Actions take up to 16 parameters
+
+            Action<float, float, float> sum = (x, y, z) => { Console.WriteLine(x + y + z); };
+            sum(1.1f, 2.2f, 3.3f);
         }
     }
 
-    internal class ConfigurationManager<T>
-    {
-        public T LoadedConfiguration { get; private set; }
-        public ConfigurationManager(T config)
-        {
-            LoadedConfiguration = config;
-        }
-
-        public static void SaveConfig(T configToSave)
-        {
-
-        }
-    }
 }
