@@ -13,19 +13,12 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-            //Action has no return value
-            //This action has no parameters
-            //Acts like a method where it executes code in the braces
-            Action action = () => { Console.WriteLine("Hello, World!"); };
-            action();
+            
+            //Returns true or false
+            Predicate<int> isEvem = (x) => { return x % 2 == 0;  };
 
-            //func is similar to action but it has a return value
-
-            Func<string> getName = () => { return "Hello, World!"; };
-            var message = getName();
-
-            //Defines type of parameter but 3rd turn type is return type
-            Func<int, int, int> add = (x, y) => { return x + y; } ;
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<int> evenNumbers = numbers.FindAll(isEvem);
         }
     }
 
