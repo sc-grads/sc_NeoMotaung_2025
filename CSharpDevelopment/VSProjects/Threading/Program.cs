@@ -45,18 +45,41 @@ namespace Threading
 
             var taskCompletionSource = new TaskCompletionSource<bool>();
 
-            var thread = new Thread(() =>
+            //We must be very intentional and careful about our use of threads
+            //We must know what we're using threads for and how many threads we are creating
+            //The following just creates a lot of threads and can overwhelm the CPU
+
+
+            //Main intention of threads is to run some stuff in the background
+            //While other stuff is happening in the foreground
+
+            /*new Thread(() =>
             {
-                Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} started ");
-                Thread.Sleep(5000);
-                taskCompletionSource.TrySetResult(true);
-                Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} ended");
+                Thread.Sleep(1000);
+                Console.WriteLine("Thread 4");
+            })
+            { IsBackground = true }.Start();*/
+
+            Enumerable.Range(0, 1000).ToList().ForEach(f =>
+            {
+                ThreadPool.QueueUserWorkItem(_ =>
+                {
+                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} started ");
+                    Thread.Sleep(1000);
+                    
+                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} ended");
+                });
+
+                /*new Thread(() =>
+                {
+                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} started ");
+                    Thread.Sleep(1000);
+                    
+                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} ended");
+                }).Start();*/
             });
-            //thread abort is risky cause it can leave shared resources in an inconsistent state and can crash program
-            
-            thread.Start();
-            var test = taskCompletionSource.Task.Result;
-            Console.WriteLine("Task completed");
+
+           
         }
     }
 }
