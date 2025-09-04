@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Generics
 {
@@ -11,26 +12,42 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-           // Box<string> nocSTR = new Box<string>("Initial String");
-           Box<int, string> nocINTSTR = new Box<int, string>(1, "One");
-           nocINTSTR.Display();
+           
+
+            
         }
     }
 
-    class Box<TFirst, TSecond>
-    {
-        public TFirst First { get; set; }
-        public TSecond Second { get; set; }
+   
 
-        public Box(TFirst first, TSecond second)
+    //Generic interfaces allows flexibility with the contract defined by interfaces.
+
+
+    internal interface IRepository<T> 
+    {
+        //Keep param name for generic interface broad
+        void Add (T item);
+
+        void Remove (T item);
+    }
+
+    internal class Product
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
+    //Generic classes and interfaces.
+    internal class Repo<T> : IRepository<T>
+    {
+        public void Add(T entity)
         {
-            First = first;
-            Second = second;
+
         }
 
-        public void Display()
+        public void Remove(T entity)
         {
-            Console.WriteLine($"First: {First}, Second: {Second}");
+
         }
     }
 }
