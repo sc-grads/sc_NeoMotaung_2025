@@ -4,6 +4,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Generics
 {
@@ -11,26 +13,13 @@ namespace Generics
     {
         static void Main(string[] args)
         {
-           // Box<string> nocSTR = new Box<string>("Initial String");
-           Box<int, string> nocINTSTR = new Box<int, string>(1, "One");
-           nocINTSTR.Display();
+            
+            //Returns true or false
+            Predicate<int> isEvem = (x) => { return x % 2 == 0;  };
+
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<int> evenNumbers = numbers.FindAll(isEvem);
         }
     }
 
-    class Box<TFirst, TSecond>
-    {
-        public TFirst First { get; set; }
-        public TSecond Second { get; set; }
-
-        public Box(TFirst first, TSecond second)
-        {
-            First = first;
-            Second = second;
-        }
-
-        public void Display()
-        {
-            Console.WriteLine($"First: {First}, Second: {Second}");
-        }
-    }
 }
