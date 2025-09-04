@@ -11,75 +11,51 @@ namespace Threading
     {
         static void Main(string[] args)
         {
-            //Entire code block is executed within the main thread
-            /*Console.WriteLine("Hello World 1");
-            Thread.Sleep(1000);
-            Console.WriteLine("Hello World 2");
-            Thread.Sleep(1000);
-            Console.WriteLine("Hello World 3");
-            Thread.Sleep(1000);
-            Console.WriteLine("Hello World 4");*/
 
-            //Threads that run in parallel
-            //Number of threads or concurrency is limited by the number of cores in the CPU
-            /*new Thread(() =>
+            Console.WriteLine("Main thread started");
+
+            Thread thread1 = new Thread(Thread1Function);
+            Thread thread2 = new Thread(Thread2Function);
+
+            thread1.Start();
+            thread2.Start();
+
+            if (thread1.Join(1000))
             {
-                Thread.Sleep(1000);
-                Console.WriteLine("Thread 1");
-            }).Start();
-            new Thread(() =>
+                Console.WriteLine("Thread1Function done");
+            }
+            else
             {
-                Thread.Sleep(1000);
-                Console.WriteLine("Thread 2");
-            }).Start();
-            new Thread(() =>
+                Console.WriteLine("Thread1Function is taking too long, proceeding without waiting");
+            }
+
+            if (thread1.IsAlive)
             {
-                Thread.Sleep(1000);
-                Console.WriteLine("Thread 3");
-            }).Start();
-            new Thread(() =>
+                Console.WriteLine("thread1 is still alive");
+            }
+            else
             {
-                Thread.Sleep(1000);
-                Console.WriteLine("Thread 4");
-            }).Start();*/
-
-            var taskCompletionSource = new TaskCompletionSource<bool>();
-
-            //We must be very intentional and careful about our use of threads
-            //We must know what we're using threads for and how many threads we are creating
-            //The following just creates a lot of threads and can overwhelm the CPU
+                Console.WriteLine("Thread1 completed");
+            }
 
 
-            //Main intention of threads is to run some stuff in the background
-            //While other stuff is happening in the foreground
+            thread2.Join();
+            Console.WriteLine("Thread2Function done");
 
-            /*new Thread(() =>
-            {
-                Thread.Sleep(1000);
-                Console.WriteLine("Thread 4");
-            })
-            { IsBackground = true }.Start();*/
-
-            Enumerable.Range(0, 1000).ToList().ForEach(f =>
-            {
-                ThreadPool.QueueUserWorkItem(_ =>
-                {
-                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} started ");
-                    Thread.Sleep(1000);
-                    
-                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} ended");
-                });
-
-                /*new Thread(() =>
-                {
-                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} started ");
-                    Thread.Sleep(1000);
-                    
-                    Console.WriteLine($"Thread number: {Thread.CurrentThread.ManagedThreadId} ended");
-                }).Start();*/
-            });
-
+            Console.WriteLine("Main thread ended");
            
         }
+
+        public static void Thread1Function()
+        {
+            Console.WriteLine("Thread1Function started");
+            Thread.Sleep(3000);
+        }
+
+        public static void Thread2Function()
+        {
+            Console.WriteLine("Thread2Function started");
+        }
+
     }
 }
