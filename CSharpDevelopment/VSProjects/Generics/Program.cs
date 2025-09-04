@@ -19,13 +19,13 @@ namespace Generics
             Action action = () => { Console.WriteLine("Hello, World!"); };
             action();
 
-            Action<int> numPrint = (x) => { Console.WriteLine(x); };
-            numPrint(100);
+            //func is similar to action but it has a return value
 
-            //Actions take up to 16 parameters
+            Func<string> getName = () => { return "Hello, World!"; };
+            var message = getName();
 
-            Action<float, float, float> sum = (x, y, z) => { Console.WriteLine(x + y + z); };
-            sum(1.1f, 2.2f, 3.3f);
+            //Defines type of parameter but 3rd turn type is return type
+            Func<int, int, int> add = (x, y) => { return x + y; } ;
         }
     }
 
