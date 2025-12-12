@@ -1,6 +1,8 @@
 USE AdventureWorks2022
 GO
 
+
+
 -- Question 1
 
 SELECT * 
@@ -63,9 +65,10 @@ ORDER BY ProductID ASC
 
 -- Question 10
 
-SELECT SUM(Quantity) * 10 AS total_quantity 
+SELECT SUM(Quantity) AS total_quantity 
 FROM Production.ProductInventory 
 GROUP BY LocationID
+
 
 -- Question 11
 
@@ -74,7 +77,7 @@ FROM Person.Person AS p
 JOIN Person.PersonPhone AS ph 
 ON p.BusinessEntityID = ph.BusinessEntityID
 WHERE P.LastName LIKE 'L%'
-ORDER BY p.FirstName ASC, p.LastName ASC
+ORDER BY p.LastName ASC, p.FirstName ASC 
 
 -- Question 12
 
@@ -143,6 +146,21 @@ ON bec.BusinessEntityID = p.BusinessEntityID
 WHERE ct.Name = 'Purchasing Manager'
 ORDER BY p.LastName ASC, p.FirstName ASC
 
+-- Selecting BusinessEntityID, LastName, and FirstName from multiple tables based on specified conditions
+SELECT pp.BusinessEntityID, LastName, FirstName
+    -- Retrieving BusinessEntityID, LastName, and FirstName columns
+    FROM Person.BusinessEntityContact AS pb 
+        -- Joining Person.BusinessEntityContact with Person.ContactType based on ContactTypeID
+        INNER JOIN Person.ContactType AS pc
+            ON pc.ContactTypeID = pb.ContactTypeID
+        -- Joining Person.BusinessEntityContact with Person.Person based on BusinessEntityID
+        INNER JOIN Person.Person AS pp
+            ON pp.BusinessEntityID = pb.PersonID
+    -- Filtering the results to include only records where the ContactType Name is 'Purchasing Manager'
+    WHERE pc.Name = 'Purchasing Manager'
+    -- Sorting the results by LastName and FirstName
+    ORDER BY LastName, FirstName;
+
 
 -- Question 21
 
@@ -154,9 +172,18 @@ JOIN Person.Address AS addr
 ON addr.AddressID = bea.AddressID
 JOIN Person.Person AS p
 ON sp.BusinessEntityID = p.BusinessEntityID
-WHERE sp.SalesYTD > 0
---GROUP BY p.LastName, sp.SalesYTD
+WHERE sp.SalesYTD != 0
 ORDER BY addr.PostalCode ASC
+
+SELECT ROW_NUMBER() OVER(PARTITION BY pa.PostalCode ORDER BY sp.SalesYTD DESC) AS RowNumber, p.LastName, sp.SalesYTD, pa.PostalCode
+FROM Sales.SalesPerson AS sp
+JOIN Person.Person AS p 
+ON sp.BusinessEntityID = p.BusinessEntityID
+JOIN Person.BusinessEntityAddress AS bea 
+ON bea.AddressID = p.BusinessEntityID
+JOIN Person.Address AS pa 
+ON pa.AddressID = bea.AddressID
+ORDER BY pa.PostalCode ASC
 
 -- Question 22
 
